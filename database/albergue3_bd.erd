@@ -4,12 +4,12 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": -185,
-    "scrollLeft": 0,
+    "scrollTop": 0,
+    "scrollLeft": -96,
     "zoomLevel": 1,
     "show": 502,
-    "database": 16,
-    "databaseName": "albergue1_bd",
+    "database": 4,
+    "databaseName": "albergue3_bd",
     "canvasType": "ERD",
     "language": 1,
     "tableNameCase": 4,
@@ -87,7 +87,6 @@
           "CZ3Ej2YfgY5qRwRAgDk6c",
           "U5st8g7Juxsdpxk_QM_BG",
           "nOFamaKCF0R7eBotMeQJH",
-          "vO3tpgTxUoPGL4PrgfOmP",
           "lUkisy3S6YDvC5aJvfgh7",
           "HtIe24PS_ofnHIgWMioRS",
           "LjX4Q695JYLD1aJCP9S16"
@@ -120,7 +119,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1750982203769,
+          "updateAt": 1751010599956,
           "createAt": 1750972273419
         }
       },
@@ -544,7 +543,7 @@
         "tableId": "lI-cEPoUyGXRNyB3RUH44",
         "name": "id_tipo_mascota",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 11,
         "ui": {
@@ -555,7 +554,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750972220273,
+          "updateAt": 1751010594366,
           "createAt": 1750972178085
         }
       },
@@ -564,18 +563,18 @@
         "tableId": "lI-cEPoUyGXRNyB3RUH44",
         "name": "nombre",
         "comment": "",
-        "dataType": "varchar(20)",
+        "dataType": "VARCHAR(20)",
         "default": "",
         "options": 12,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 75,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750972270647,
+          "updateAt": 1751010566486,
           "createAt": 1750972223580
         }
       },
@@ -584,7 +583,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "id_mascota",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 11,
         "ui": {
@@ -595,7 +594,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750972481290,
+          "updateAt": 1751010570022,
           "createAt": 1750972407563
         }
       },
@@ -604,18 +603,18 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "nombre",
         "comment": "",
-        "dataType": "varchar(15)",
+        "dataType": "VARCHAR(15)",
         "default": "",
         "options": 12,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 75,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750972449004,
+          "updateAt": 1751010573770,
           "createAt": 1750972419223
         }
       },
@@ -1104,7 +1103,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "id_albergue",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 8,
         "ui": {
@@ -1115,7 +1114,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750974368460,
+          "updateAt": 1751010597753,
           "createAt": 1750974368460
         }
       },
@@ -1124,7 +1123,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "id_tipo_mascota",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 8,
         "ui": {
@@ -1135,7 +1134,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750974378285,
+          "updateAt": 1751010594366,
           "createAt": 1750974378285
         }
       },
@@ -1144,7 +1143,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "fec_nacimiento",
         "comment": "aproximada",
-        "dataType": "date",
+        "dataType": "DATE",
         "default": "",
         "options": 8,
         "ui": {
@@ -1155,7 +1154,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982493297,
+          "updateAt": 1751010578093,
           "createAt": 1750974402545
         }
       },
@@ -1164,7 +1163,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "adoptado",
         "comment": "",
-        "dataType": "boolean",
+        "dataType": "BOOLEAN",
         "default": "",
         "options": 8,
         "ui": {
@@ -1175,7 +1174,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750974471601,
+          "updateAt": 1751010707232,
           "createAt": 1750974463758
         }
       },
@@ -1204,7 +1203,7 @@
         "tableId": "JXZNLNDwFFNvQem_qVtHD",
         "name": "id_raza",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 11,
         "ui": {
@@ -1215,7 +1214,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750974670833,
+          "updateAt": 1751010595808,
           "createAt": 1750974660246
         }
       },
@@ -1224,18 +1223,18 @@
         "tableId": "JXZNLNDwFFNvQem_qVtHD",
         "name": "nombre",
         "comment": "",
-        "dataType": "varchar(20)",
+        "dataType": "VARCHAR(20)",
         "default": "",
         "options": 12,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 75,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982571207,
+          "updateAt": 1751010735472,
           "createAt": 1750974663431
         }
       },
@@ -1244,7 +1243,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "foto",
         "comment": "url",
-        "dataType": "text",
+        "dataType": "TEXT",
         "default": "",
         "options": 12,
         "ui": {
@@ -1255,7 +1254,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982460362,
+          "updateAt": 1751010576315,
           "createAt": 1750974707037
         }
       },
@@ -1264,7 +1263,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "sexo",
         "comment": "F: femenino - M: masculino",
-        "dataType": "char",
+        "dataType": "CHAR",
         "default": "",
         "options": 8,
         "ui": {
@@ -1275,7 +1274,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750974763634,
+          "updateAt": 1751010579553,
           "createAt": 1750974727470
         }
       },
@@ -1284,18 +1283,18 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "estatura",
         "comment": "metros",
-        "dataType": "numeric(3,2)",
+        "dataType": "NUMERIC(3,2)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 68,
+          "widthDataType": 77,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750976003828,
+          "updateAt": 1751010585724,
           "createAt": 1750974789928
         }
       },
@@ -1304,18 +1303,18 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "peso",
         "comment": "kilos",
-        "dataType": "numeric(5,2)",
+        "dataType": "NUMERIC(5,2)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 68,
+          "widthDataType": 77,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750975978417,
+          "updateAt": 1751010591989,
           "createAt": 1750974859044
         }
       },
@@ -1384,7 +1383,7 @@
         "tableId": "sJj3BW41OxpZw8LViPS_1",
         "name": "id_caracteristica",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 11,
         "ui": {
@@ -1395,7 +1394,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982581259,
+          "updateAt": 1751010748096,
           "createAt": 1750975781465
         }
       },
@@ -1404,18 +1403,18 @@
         "tableId": "sJj3BW41OxpZw8LViPS_1",
         "name": "nombre",
         "comment": "",
-        "dataType": "varchar(15)",
+        "dataType": "VARCHAR(15)",
         "default": "",
         "options": 12,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 75,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750975861259,
+          "updateAt": 1751010741182,
           "createAt": 1750975785725
         }
       },
@@ -1424,18 +1423,18 @@
         "tableId": "sJj3BW41OxpZw8LViPS_1",
         "name": "unidad_medida",
         "comment": "",
-        "dataType": "varchar(7)",
+        "dataType": "VARCHAR(7)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 83,
           "widthComment": 60,
-          "widthDataType": 60,
+          "widthDataType": 68,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750975904223,
+          "updateAt": 1751010744729,
           "createAt": 1750975808714
         }
       },
@@ -1444,7 +1443,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "discapacidad",
         "comment": "",
-        "dataType": "boolean",
+        "dataType": "BOOLEAN",
         "default": "",
         "options": 8,
         "ui": {
@@ -1455,7 +1454,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750976075021,
+          "updateAt": 1751010709490,
           "createAt": 1750976061850
         }
       },
@@ -1464,7 +1463,7 @@
         "tableId": "rpova6OIcrG6Sq30yqwSd",
         "name": "id_mascota",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 10,
         "ui": {
@@ -1475,7 +1474,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982642387,
+          "updateAt": 1751010570022,
           "createAt": 1750976148530
         }
       },
@@ -1484,7 +1483,7 @@
         "tableId": "rpova6OIcrG6Sq30yqwSd",
         "name": "id_caracteristica",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 10,
         "ui": {
@@ -1495,7 +1494,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982643788,
+          "updateAt": 1751010748096,
           "createAt": 1750976154291
         }
       },
@@ -1504,18 +1503,18 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "fec_ingreso",
         "comment": "",
-        "dataType": "timestamptz",
+        "dataType": "TIMESTAMP",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 62,
           "widthComment": 60,
-          "widthDataType": 68,
+          "widthDataType": 65,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750976207753,
+          "updateAt": 1751010665590,
           "createAt": 1750976179277
         }
       },
@@ -1524,18 +1523,18 @@
         "tableId": "rpova6OIcrG6Sq30yqwSd",
         "name": "valor",
         "comment": "",
-        "dataType": "varchar(25)",
+        "dataType": "VARCHAR(25)",
         "default": "",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 60,
-          "widthDataType": 61,
+          "widthDataType": 75,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750982634038,
+          "updateAt": 1751010753604,
           "createAt": 1750976227999
         }
       },
@@ -1544,7 +1543,7 @@
         "tableId": "cL_4AGS_QnHNEq88Lc1gz",
         "name": "id_raza",
         "comment": "",
-        "dataType": "int",
+        "dataType": "INT",
         "default": "",
         "options": 8,
         "ui": {
@@ -1555,7 +1554,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750976316519,
+          "updateAt": 1751010595808,
           "createAt": 1750976316519
         }
       },
@@ -2059,7 +2058,7 @@
           "columnIds": [
             "J3R8mMiUNWyfezrD443ER"
           ],
-          "x": 270,
+          "x": 277,
           "y": 159,
           "direction": 8
         },
@@ -2068,7 +2067,7 @@
           "columnIds": [
             "U5st8g7Juxsdpxk_QM_BG"
           ],
-          "x": 326,
+          "x": 330.5,
           "y": 259,
           "direction": 4
         },
@@ -2087,8 +2086,8 @@
           "columnIds": [
             "-0ym61plF-KyEiMI33GY8"
           ],
-          "x": 326,
-          "y": 627,
+          "x": 330.5,
+          "y": 603,
           "direction": 8
         },
         "end": {
@@ -2096,7 +2095,7 @@
           "columnIds": [
             "dNesqbGLbh8pMFZc9xFDx"
           ],
-          "x": 408.5,
+          "x": 415.5,
           "y": 727,
           "direction": 4
         },
@@ -2124,7 +2123,7 @@
           "columnIds": [
             "NIUWsFArPmcvtt2ln80Mm"
           ],
-          "x": 597,
+          "x": 611,
           "y": 791,
           "direction": 2
         },
@@ -2152,8 +2151,8 @@
           "columnIds": [
             "nOFamaKCF0R7eBotMeQJH"
           ],
-          "x": 561,
-          "y": 443,
+          "x": 570,
+          "y": 431,
           "direction": 2
         },
         "meta": {
