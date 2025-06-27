@@ -4,12 +4,12 @@
   "settings": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
+    "scrollTop": -185,
     "scrollLeft": 0,
     "zoomLevel": 1,
     "show": 502,
     "database": 16,
-    "databaseName": "adoptame_bd",
+    "databaseName": "albergue1_bd",
     "canvasType": "ERD",
     "language": 1,
     "tableNameCase": 4,
@@ -33,19 +33,15 @@
     "tableIds": [
       "lI-cEPoUyGXRNyB3RUH44",
       "cL_4AGS_QnHNEq88Lc1gz",
-      "inOx_I_sj6uZstZoiWlEx",
       "JXZNLNDwFFNvQem_qVtHD",
       "sJj3BW41OxpZw8LViPS_1",
-      "rpova6OIcrG6Sq30yqwSd",
-      "LM9L16qDLv7zlatqBXqWn"
+      "rpova6OIcrG6Sq30yqwSd"
     ],
     "relationshipIds": [
-      "5yTI7deqw6l0WajNRvN2L",
       "4_NFVj-IxEf0oqfFo2-K6",
       "ns3PXTmSiB8cvoM_Y54Bn",
       "Vp0m78Jt3hkEbhbw_OCZl",
-      "jzyanbEiMyxASqQ0ODz3x",
-      "4e8eaSRaQN8oJEz05e_fo"
+      "jzyanbEiMyxASqQ0ODz3x"
     ],
     "indexIds": [],
     "memoIds": []
@@ -1112,7 +1108,7 @@
         "default": "",
         "options": 8,
         "ui": {
-          "keys": 2,
+          "keys": 0,
           "widthName": 64,
           "widthComment": 60,
           "widthDataType": 60,
@@ -1972,7 +1968,7 @@
         "default": "",
         "options": 8,
         "ui": {
-          "keys": 2,
+          "keys": 0,
           "widthName": 64,
           "widthComment": 60,
           "widthDataType": 60,
@@ -2157,7 +2153,7 @@
             "nOFamaKCF0R7eBotMeQJH"
           ],
           "x": 561,
-          "y": 535,
+          "y": 443,
           "direction": 2
         },
         "meta": {

@@ -1,14 +1,4 @@
-
-CREATE TABLE albergue
-(
-  id_albergue  int         NOT NULL GENERATED ALWAYS AS IDENTITY,
-  nombre       varchar(30) NOT NULL UNIQUE,
-  fec_creacion date        NOT NULL,
-  ubicacion    point       NOT NULL UNIQUE,
-  PRIMARY KEY (id_albergue)
-);
-
-COMMENT ON COLUMN albergue.ubicacion IS 'coordenadas';
+-- POSTGRESQL DATABASE SCRIPT --
 
 CREATE TABLE caracteristica_complementaria
 (
@@ -37,7 +27,6 @@ CREATE TABLE mascota
   peso            numeric(5,2) NOT NULL,
   id_tipo_mascota int          NOT NULL,
   id_raza         int          NOT NULL,
-  id_albergue     int          NOT NULL,
   fec_ingreso     timestamptz  NOT NULL,
   adoptado        boolean      NOT NULL,
   discapacidad    boolean      NOT NULL,
@@ -62,26 +51,12 @@ CREATE TABLE raza
   PRIMARY KEY (id_raza)
 );
 
-CREATE TABLE representante_albergue
-(
-  id_representante int         NOT NULL GENERATED ALWAYS AS IDENTITY,
-  nombres          varchar(50) NOT NULL,
-  apellidos        varchar(50) NOT NULL,
-  id_albergue      int         NOT NULL,
-  PRIMARY KEY (id_representante)
-);
-
 CREATE TABLE tipo_mascota
 (
   id_tipo_mascota int         NOT NULL GENERATED ALWAYS AS IDENTITY,
   nombre          varchar(20) NOT NULL UNIQUE,
   PRIMARY KEY (id_tipo_mascota)
 );
-
-ALTER TABLE mascota
-  ADD CONSTRAINT FK_albergue_TO_mascota
-    FOREIGN KEY (id_albergue)
-    REFERENCES albergue (id_albergue);
 
 ALTER TABLE mascota
   ADD CONSTRAINT FK_tipo_mascota_TO_mascota
@@ -102,8 +77,3 @@ ALTER TABLE mascota
   ADD CONSTRAINT FK_raza_TO_mascota
     FOREIGN KEY (id_raza)
     REFERENCES raza (id_raza);
-
-ALTER TABLE representante_albergue
-  ADD CONSTRAINT FK_albergue_TO_representante_albergue
-    FOREIGN KEY (id_albergue)
-    REFERENCES albergue (id_albergue);
