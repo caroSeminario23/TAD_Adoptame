@@ -52,13 +52,15 @@
           "Zs7fIU6wKS76ontzk_3kC",
           "qsUi5YL9tjFW2TJiTV4oH",
           "bAc7gQfeIdSlQrPMgV9fo",
-          "-XoxfGZHqfCx2L7hnAqTj"
+          "-XoxfGZHqfCx2L7hnAqTj",
+          "GHRl41HmLL3t0QJLra2YG"
         ],
         "seqColumnIds": [
           "Zs7fIU6wKS76ontzk_3kC",
           "qsUi5YL9tjFW2TJiTV4oH",
           "bAc7gQfeIdSlQrPMgV9fo",
-          "-XoxfGZHqfCx2L7hnAqTj"
+          "-XoxfGZHqfCx2L7hnAqTj",
+          "GHRl41HmLL3t0QJLra2YG"
         ],
         "ui": {
           "x": 48,
@@ -69,7 +71,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1751007510188,
+          "updateAt": 1751079400893,
           "createAt": 1751007372166
         }
       },
@@ -393,6 +395,26 @@
           "updateAt": 1751008259756,
           "createAt": 1751008259756
         }
+      },
+      "GHRl41HmLL3t0QJLra2YG": {
+        "id": "GHRl41HmLL3t0QJLra2YG",
+        "tableId": "gVcHV1FcuKJBX6AnfyFqK",
+        "name": "celular",
+        "comment": "",
+        "dataType": "varchar(9)",
+        "default": "",
+        "options": 12,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1751079435167,
+          "createAt": 1751079400892
+        }
       }
     },
     "relationshipEntities": {
@@ -407,7 +429,7 @@
             "Zs7fIU6wKS76ontzk_3kC"
           ],
           "x": 232,
-          "y": 204,
+          "y": 228,
           "direction": 8
         },
         "end": {
@@ -435,7 +457,7 @@
             "Zs7fIU6wKS76ontzk_3kC"
           ],
           "x": 416,
-          "y": 128,
+          "y": 140,
           "direction": 2
         },
         "end": {

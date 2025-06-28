@@ -5,6 +5,7 @@ CREATE TABLE albergue
   nombre       varchar(30) NOT NULL UNIQUE,
   fec_creacion date        NOT NULL,
   ubicacion    point       NOT NULL UNIQUE,
+  celular      varchar(9)  NOT NULL UNIQUE,
   PRIMARY KEY (id_albergue)
 );
 
