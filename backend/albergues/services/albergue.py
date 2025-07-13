@@ -4,7 +4,7 @@ from utils.db import db
 from models.albergue import Albergues
 from schemas.albergue import albergues_schema, albergue_schema
 
-albergue_routes = Blueprint('albergues', __name__)
+albergue_routes = Blueprint('albergue_routes', __name__)
 
 @albergue_routes.routes("/get_albergues", methods=["GET"])
 def get_albergues():

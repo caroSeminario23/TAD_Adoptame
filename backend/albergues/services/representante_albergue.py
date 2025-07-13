@@ -4,7 +4,7 @@ from utils.db import db
 from models.representante_albergue import Representante_albergue
 from schemas.representante_albergue import representantes_albergues_schema, representante_albergue_schema
 
-representate_albergue_routes = Blueprint('representante_albergues', __name__)
+representate_albergue_routes = Blueprint('representante_routes', __name__)
 
 @representate_albergue_routes.routes("/get_representantes_albergues", methods=["GET"])
 def get_representantes_albergues():

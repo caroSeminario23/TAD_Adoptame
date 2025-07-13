@@ -4,7 +4,7 @@ from utils.db import db
 from models.servicio import Servicio
 from schemas.servicio import servicios_schema, servicio_schema
 
-servicio_routes = Blueprint('servicio', __name__)
+servicio_routes = Blueprint('servicio_routes', __name__)
 
 @servicio_routes.routes("/get_servicios", methods=["GET"])
 def get_servicios():
