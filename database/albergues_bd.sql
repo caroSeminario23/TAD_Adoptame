@@ -4,7 +4,7 @@ CREATE TABLE albergue
   id_albergue  int         NOT NULL GENERATED ALWAYS AS IDENTITY,
   nombre       varchar(30) NOT NULL UNIQUE,
   fec_creacion date        NOT NULL,
-  ubicacion    point       NOT NULL UNIQUE,
+  ubicacion    point       NOT NULL,
   celular      varchar(9)  NOT NULL UNIQUE,
   PRIMARY KEY (id_albergue)
 );
