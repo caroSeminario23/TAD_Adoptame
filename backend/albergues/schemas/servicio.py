@@ -9,7 +9,7 @@ class Servicio_Schema(ma.SQLAlchemyAutoSchema):
         model = Servicio
         fields = (
             'id_servicio',
-            'nombres'
+            'nombre'
             'endpoint_api',
             'id_albergue',
             'albergue'

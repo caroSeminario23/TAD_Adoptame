@@ -1,4 +1,5 @@
 from utils.db import db
+from geoalchemy2 import Geometry
 
 class Albergue(db.Model):
     __tablename__ = 'albergue'

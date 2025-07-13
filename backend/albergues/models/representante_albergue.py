@@ -32,7 +32,7 @@ class Representante_albergue(db.Model):
     # Relaciones
     albergue = db.relationship(
         'Albergue',
-        backref='albergue_servicio'
+        backref='albergue_representante'
     )
 
     # Constructor
