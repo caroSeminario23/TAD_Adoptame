@@ -1,3 +1,4 @@
+-- MYSQL DATABASE SCRIPT --
 
 CREATE TABLE caracteristica_complementaria
 (
