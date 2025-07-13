@@ -25,21 +25,29 @@ def get_representantes_albergues():
         }
         return make_response(jsonify(data), 200)
     
-@representate_albergue_routes.route("/get_representante_albergue/<int:id_representante>", methods=["GET"])
-def get_representante_albergue(id_representante):
-    representante_albergue = Representante_albergue.query.get(id_representante)
-
-    if not representante_albergue:
+@representate_albergue_routes.route("/get_representante_albergue", methods=["POST"])
+def get_representante_albergue():
+    id_representante = request.json.get('id_representante')
+    if not id_representante:
         data = {
-            'message': 'Representante de albergue no encontrado.',
-            'status': 404
+            'message': 'ID de representante de albergue no proporcionado.',
+            'status': 400
         }
-        return make_response(jsonify(data), 404)
+        return make_response(jsonify(data), 400)
     else:
-        result = representante_albergue_schema.dump(representante_albergue)
-        data = {
-            'message': 'Representante de albergue encontrado.',
-            'status': 200,
-            'data': result
-        }
-        return make_response(jsonify(data), 200)
+        representante_albergue = Representante_albergue.query.get(id_representante)
+
+        if not representante_albergue:
+            data = {
+                'message': 'Representante de albergue no encontrado.',
+                'status': 404
+            }
+            return make_response(jsonify(data), 404)
+        else:
+            result = representante_albergue_schema.dump(representante_albergue)
+            data = {
+                'message': 'Representante de albergue encontrado.',
+                'status': 200,
+                'data': result
+            }
+            return make_response(jsonify(data), 200)

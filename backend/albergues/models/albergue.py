@@ -25,7 +25,7 @@ class Albergue(db.Model):
     )
 
     ubicacion = db.Column(
-        Geometry('POINT'),
+        db.String(50),
         nullable=False,
         unique=True
     )

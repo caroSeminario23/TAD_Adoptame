@@ -1,0 +1,12 @@
+# ENDPOINTS DE REPRESENTANTE ALBERGUE
+
+GET http://127.0.0.1:5000/representante_routes/get_representantes_albergues
+#####
+
+POST http://127.0.0.1:5000/representante_routes/get_representante_albergue
+Content-Type: application/json
+
+{
+    "id_representante": 2
+}
+#####

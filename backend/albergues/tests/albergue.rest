@@ -1,0 +1,12 @@
+# ENDPOINTS DE ALBERGUE
+
+GET http://127.0.0.1:5000/albergue_routes/get_albergues
+#####
+
+POST http://127.0.0.1:5000/albergue_routes/get_albergue
+Content-Type: application/json
+
+{
+    "id_albergue": 3
+}
+#####

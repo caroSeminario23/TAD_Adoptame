@@ -6,7 +6,7 @@ from models.albergue import Albergue
 class Albergue_Schema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Albergue
-        exclude = ("ubicacion",)
+        #exclude = ("ubicacion",)
         fields = (
             'id_albergue',
             'nombre',

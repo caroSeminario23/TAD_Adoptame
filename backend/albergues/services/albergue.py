@@ -25,21 +25,29 @@ def get_albergues():
         }
         return make_response(jsonify(data), 200)
     
-@albergue_routes.route("/get_albergue/<int:id_albergue>", methods=["GET"])
-def get_albergue(id_albergue):
-    albergue = Albergue.query.get(id_albergue)
-
-    if not albergue:
+@albergue_routes.route("/get_albergue", methods=["POST"])
+def get_albergue():
+    id_albergue = request.json.get('id_albergue')
+    if not id_albergue:
         data = {
-            'message': 'Albergue no encontrado.',
-            'status': 404
+            'message': 'ID de albergue no proporcionado.',
+            'status': 400
         }
-        return make_response(jsonify(data), 404)
+        return make_response(jsonify(data), 400)
     else:
-        result = albergue_schema.dump(albergue)
-        data = {
-            'message': 'Albergue encontrado.',
-            'status': 200,
-            'data': result
-        }
-        return make_response(jsonify(data), 200)
+        albergue = Albergue.query.get(id_albergue)
+
+        if not albergue:
+            data = {
+                'message': 'Albergue no encontrado.',
+                'status': 404
+            }
+            return make_response(jsonify(data), 404)
+        else:
+            result = albergue_schema.dump(albergue)
+            data = {
+                'message': 'Albergue encontrado.',
+                'status': 200,
+                'data': result
+            }
+            return make_response(jsonify(data), 200)

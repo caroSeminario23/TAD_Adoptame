@@ -25,21 +25,29 @@ def get_servicios():
         }
         return make_response(jsonify(data), 200)
     
-@servicio_routes.route("/get_servicio/<int:id_servicio>", methods=["GET"])
-def get_servicio(id_servicio):
-    servicio = Servicio.query.get(id_servicio)
-
-    if not servicio:
+@servicio_routes.route("/get_servicio", methods=["POST"])
+def get_servicio():
+    id_servicio = request.json.get('id_servicio')
+    if not id_servicio:
         data = {
-            'message': 'Servicio no encontrado.',
-            'status': 404
+            'message': 'ID de servicio no proporcionado.',
+            'status': 400
         }
-        return make_response(jsonify(data), 404)
+        return make_response(jsonify(data), 400)
     else:
-        result = servicio_schema.dump(servicio)
-        data = {
-            'message': 'Servicio encontrado.',
-            'status': 200,
-            'data': result
-        }
-        return make_response(jsonify(data), 200)
+        servicio = Servicio.query.get(id_servicio)
+
+        if not servicio:
+            data = {
+                'message': 'Servicio no encontrado.',
+                'status': 404
+            }
+            return make_response(jsonify(data), 404)
+        else:
+            result = servicio_schema.dump(servicio)
+            data = {
+                'message': 'Servicio encontrado.',
+                'status': 200,
+                'data': result
+            }
+            return make_response(jsonify(data), 200)

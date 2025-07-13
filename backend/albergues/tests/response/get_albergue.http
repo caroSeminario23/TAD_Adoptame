@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.12.5
+Date: Sun, 13 Jul 2025 03:55:13 GMT
+Content-Type: application/json
+Content-Length: 230
+Access-Control-Allow-Origin: localhost
+Connection: close
+
+{
+  "data": {
+    "celular": "999888777",
+    "fec_creacion": "2021-07-30",
+    "id_albergue": 3,
+    "nombre": "Patitas Felices",
+    "ubicacion": "(-77.0456,-12.0489)"
+  },
+  "message": "Albergue encontrado.",
+  "status": 200
+}

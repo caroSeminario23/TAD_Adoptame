@@ -22,10 +22,10 @@ CREATE TABLE representante_albergue
 
 CREATE TABLE servicio
 (
-  id_servicio int         NOT NULL GENERATED ALWAYS AS IDENTITY,
-  nombre      varchar(20) NOT NULL,
+  id_servicio     int         NOT NULL GENERATED ALWAYS AS IDENTITY,
+  nombre          varchar(20) NOT NULL,
   endpoint_api    text        NOT NULL UNIQUE,
-  id_albergue int         NOT NULL,
+  id_albergue     int         NOT NULL,
   PRIMARY KEY (id_servicio)
 );
 

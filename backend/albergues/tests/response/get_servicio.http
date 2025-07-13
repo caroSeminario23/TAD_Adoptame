@@ -1,0 +1,18 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.12.5
+Date: Sun, 13 Jul 2025 03:59:39 GMT
+Content-Type: application/json
+Content-Length: 204
+Access-Control-Allow-Origin: localhost
+Connection: close
+
+{
+  "data": {
+    "endpoint_api": "https://api.sanmartin.org/mascotas",
+    "id_albergue": 1,
+    "id_servicio": 1,
+    "nombre": "get_mascota"
+  },
+  "message": "Servicio encontrado.",
+  "status": 200
+}

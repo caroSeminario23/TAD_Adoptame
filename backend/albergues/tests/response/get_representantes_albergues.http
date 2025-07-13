@@ -1,0 +1,44 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.12.5
+Date: Sun, 13 Jul 2025 03:57:29 GMT
+Content-Type: application/json
+Content-Length: 705
+Access-Control-Allow-Origin: localhost
+Connection: close
+
+{
+  "data": [
+    {
+      "apellidos": "Fern\u00e1ndez",
+      "id_albergue": 1,
+      "id_representante": 1,
+      "nombres": "Laura"
+    },
+    {
+      "apellidos": "Rojas",
+      "id_albergue": 1,
+      "id_representante": 2,
+      "nombres": "Carlos"
+    },
+    {
+      "apellidos": "Morales",
+      "id_albergue": 2,
+      "id_representante": 3,
+      "nombres": "Diana"
+    },
+    {
+      "apellidos": "Valverde",
+      "id_albergue": 2,
+      "id_representante": 4,
+      "nombres": "Pedro"
+    },
+    {
+      "apellidos": "Quispe",
+      "id_albergue": 3,
+      "id_representante": 5,
+      "nombres": "Andrea"
+    }
+  ],
+  "message": "Representantes de albergues encontrados.",
+  "status": 200
+}
