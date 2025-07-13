@@ -1,4 +1,5 @@
 from utils.db import db
+from sqlalchemy.dialects.postgresql import TIMESTAMP
 
 class Mascota(db.Model):
     __tablename__ = 'mascota'
@@ -28,7 +29,7 @@ class Mascota(db.Model):
     )
 
     sexo = db.Column(
-        db.Character,
+        db.String(1),
         nullable=False
     )
 
@@ -55,7 +56,7 @@ class Mascota(db.Model):
     )
 
     fec_ingreso = db.Column(
-        db.Timestamptz,
+        TIMESTAMP(timezone=True),
         nullable=False,
     )
 
