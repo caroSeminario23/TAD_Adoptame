@@ -6,7 +6,7 @@ from schemas.representante_albergue import representantes_albergues_schema, repr
 
 representate_albergue_routes = Blueprint('representante_routes', __name__)
 
-@representate_albergue_routes.routes("/get_representantes_albergues", methods=["GET"])
+@representate_albergue_routes.route("/get_representantes_albergues", methods=["GET"])
 def get_representantes_albergues():
     representantes_albergues = Representante_albergue.query.all()
 

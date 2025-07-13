@@ -6,7 +6,7 @@ from schemas.servicio import servicios_schema, servicio_schema
 
 servicio_routes = Blueprint('servicio_routes', __name__)
 
-@servicio_routes.routes("/get_servicios", methods=["GET"])
+@servicio_routes.route("/get_servicios", methods=["GET"])
 def get_servicios():
     albergues = Servicio.query.all()
 

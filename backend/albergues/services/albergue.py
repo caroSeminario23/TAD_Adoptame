@@ -1,14 +1,14 @@
 from flask import Blueprint, request, jsonify, make_response
 from utils.db import db
 
-from models.albergue import Albergues
+from models.albergue import Albergue
 from schemas.albergue import albergues_schema, albergue_schema
 
 albergue_routes = Blueprint('albergue_routes', __name__)
 
-@albergue_routes.routes("/get_albergues", methods=["GET"])
+@albergue_routes.route("/get_albergues", methods=["GET"])
 def get_albergues():
-    albergues = Albergues.query.all()
+    albergues = Albergue.query.all()
 
     if not albergues:
         data = {
@@ -27,7 +27,7 @@ def get_albergues():
     
 @albergue_routes.route("/get_albergue/<int:id_albergue>", methods=["GET"])
 def get_albergue(id_albergue):
-    albergue = Albergues.query.get(id_albergue)
+    albergue = Albergue.query.get(id_albergue)
 
     if not albergue:
         data = {
