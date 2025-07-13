@@ -28,14 +28,24 @@ def get_car_complementarias():
 @car_mascotas_routes.route("/get_car_mascota", methods=["POST"])
 def get_car_complementaria():
     id_caracteristica = request.json.get('id_caracteristica')
+    id_mascota = request.json.get('id_mascota')
     if not id_caracteristica:
         data = {
             'message': 'ID de caracteristica de mascota no proporcionado.',
             'status': 400
         }
         return make_response(jsonify(data), 400)
+    elif not id_mascota:
+        data = {
+            'message': 'ID de mascota no proporcionado.',
+            'status': 400
+        }
+        return make_response(jsonify(data), 400)
     else:
-        raza = Caracteristica_mascota.query.get(id_caracteristica)
+        raza = Caracteristica_mascota.query.filter_by(
+            id_caracteristica=id_caracteristica,
+            id_mascota=id_mascota
+        ).first()
 
         if not raza:
             data = {

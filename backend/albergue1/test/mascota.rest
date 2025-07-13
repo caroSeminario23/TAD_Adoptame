@@ -1,0 +1,12 @@
+# ENDPOINTS DE MASCOTA
+
+GET http://127.0.0.1:5000/mascota_routes/get_mascotas
+#####
+
+POST http://127.0.0.1:5000/mascota_routes/get_mascota
+Content-Type: application/json
+
+{
+    "id_mascota": 3
+}
+#####
