@@ -201,18 +201,18 @@
         "tableId": "gVcHV1FcuKJBX6AnfyFqK",
         "name": "ubicacion",
         "comment": "coordenadas",
-        "dataType": "point",
+        "dataType": "varchar(50)",
         "default": "",
-        "options": 12,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 70,
-          "widthDataType": 60,
+          "widthDataType": 61,
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1751007467497,
+          "updateAt": 1752379516218,
           "createAt": 1751007390801
         }
       },
