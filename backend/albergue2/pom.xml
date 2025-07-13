@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.adoptame.albergue2</groupId>
+  <artifactId>albergue2</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+  <name>albergue2</name>
+
+  <properties>
+    <java.version>22</java.version>
+    <spring.boot.version>3.2.5</spring.boot.version>
+  </properties>
+
+  <dependencies>
+    <!-- Web (para API REST) -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+
+    <!-- JPA + Hibernate -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+
+    <!-- Oracle JDBC driver (de Oracle Maven repo oficial) -->
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc11</artifactId>
+      <version>21.11.0.0</version>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring.boot.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring.boot.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Agrega el repositorio oficial de Oracle -->
+  <repositories>
+    <repository>
+      <id>oracle</id>
+      <url>https://maven.oracle.com</url>
+    </repository>
+  </repositories>
+</project>
