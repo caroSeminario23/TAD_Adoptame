@@ -1,7 +1,7 @@
 package com.adoptame.albergue2.controller;
 
-import com.adoptame.albergue2.model.TipoMascota;
 import com.adoptame.albergue2.service.TipoMascotaService;
+import com.adoptame.albergue2.dto.TipoMascotaDTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class TipoMascotaController {
 
     @GetMapping("/get_tipos_mascotas")
     public ResponseEntity<Map<String, Object>> getTiposMascota() {
-        List<TipoMascota> tiposMascota = tipoMascotaService.obtenerTodosLosTiposMascota();
+        List<TipoMascotaDTO> tiposMascota = tipoMascotaService.obtenerTodosLosTiposMascota();
 
         if (tiposMascota.isEmpty()) {
             Map<String, Object> response = Map.of(
@@ -45,7 +45,7 @@ public class TipoMascotaController {
         }
 
         Integer idTipoMascota = (Integer) payload.get("id_tipo_mascota");
-        Optional<TipoMascota> tipoMascota = tipoMascotaService.obtenerTipoMascotaPorId(idTipoMascota);
+        Optional<TipoMascotaDTO> tipoMascota = tipoMascotaService.obtenerTipoMascotaPorId(idTipoMascota);
 
         if (tipoMascota.isEmpty()) {
             Map<String, Object> response = Map.of(

@@ -1,6 +1,6 @@
 package com.adoptame.albergue2.controller;
 
-import com.adoptame.albergue2.model.Raza;
+import com.adoptame.albergue2.dto.RazaDTO;
 import com.adoptame.albergue2.service.RazaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class RazaController {
 
     @GetMapping("/get_razas")
     public ResponseEntity<Map<String, Object>> getRazas() {
-        List<Raza> razas = razaService.obtenerTodasLasRazas();
+        List<RazaDTO> razas = razaService.obtenerTodasLasRazas();
 
         if (razas.isEmpty()) {
             Map<String, Object> response = Map.of(
@@ -45,7 +45,7 @@ public class RazaController {
         }
 
         Integer idRaza = (Integer) payload.get("id_raza");
-        Optional<Raza> raza = razaService.obtenerRazaPorId(idRaza);
+        Optional<RazaDTO> raza = razaService.obtenerRazaPorId(idRaza);
 
         if (raza.isEmpty()) {
             Map<String, Object> response = Map.of(

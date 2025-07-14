@@ -1,6 +1,6 @@
 package com.adoptame.albergue2.controller;
 
-import com.adoptame.albergue2.model.CaracteristicaMascota;
+import com.adoptame.albergue2.dto.CaracteristicaMascotaDTO;
 import com.adoptame.albergue2.service.CarMascotaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class CarMascotaController {
 
     @GetMapping("/get_caracteristicas_mascota")
     public ResponseEntity<Map<String, Object>> getCaracteristicasMascota() {
-        List<CaracteristicaMascota> caracteristicas = carMascotaService.obtenerTodasLasCaracteristicasMascota();
+        List<CaracteristicaMascotaDTO> caracteristicas = carMascotaService.obtenerTodasLasCaracteristicasMascota();
 
         if (caracteristicas.isEmpty()) {
             Map<String, Object> response = Map.of(
@@ -46,7 +46,7 @@ public class CarMascotaController {
 
         Integer idMascota = (Integer) payload.get("id_mascota");
         Integer idCaracteristica = (Integer) payload.get("id_caracteristica");
-        Optional<CaracteristicaMascota> caracteristica = carMascotaService.obtenerCaracteristicaMascotaPorId(idMascota, idCaracteristica);
+        Optional<CaracteristicaMascotaDTO> caracteristica = carMascotaService.obtenerCaracteristicaMascotaPorId(idMascota, idCaracteristica);
 
         if (caracteristica.isEmpty()) {
             Map<String, Object> response = Map.of(

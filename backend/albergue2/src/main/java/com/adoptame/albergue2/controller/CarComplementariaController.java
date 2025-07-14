@@ -1,6 +1,6 @@
 package com.adoptame.albergue2.controller;
 
-import com.adoptame.albergue2.model.CaracteristicaComplementaria;
+import com.adoptame.albergue2.dto.CarateristicaComplementariaDTO;
 import com.adoptame.albergue2.service.CarComplementariaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class CarComplementariaController {
 
     @GetMapping("/get_caracteristicas_complementarias")
     public ResponseEntity<Map<String, Object>> getCaracteristicasComplementarias() {
-        List<CaracteristicaComplementaria> caracteristicas = carComplementariaService.obtenerTodasLasCaracteristicasComplementarias();
+        List<CarateristicaComplementariaDTO> caracteristicas = carComplementariaService.obtenerTodasLasCaracteristicasComplementarias();
 
         if (caracteristicas.isEmpty()) {
             Map<String, Object> response = Map.of(
@@ -45,7 +45,7 @@ public class CarComplementariaController {
         }
 
         Integer idCaracteristica = (Integer) payload.get("id_caracteristica_complementaria");
-        Optional<CaracteristicaComplementaria> caracteristica = carComplementariaService.obtenerCaracteristicaComplementariaPorId(idCaracteristica);
+        Optional<CarateristicaComplementariaDTO> caracteristica = carComplementariaService.obtenerCaracteristicaComplementariaPorId(idCaracteristica);
 
         if (caracteristica.isEmpty()) {
             Map<String, Object> response = Map.of(
