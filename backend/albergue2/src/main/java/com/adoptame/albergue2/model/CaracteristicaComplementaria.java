@@ -26,4 +26,29 @@ public class CaracteristicaComplementaria {
         this.nombre = nombre;
         this.unidadMedida = unidadMedida;
     }
+
+    // Getters y setters
+    public Integer getIdCaracteristica() {
+        return idCaracteristica;
+    }
+
+    public void setIdCaracteristica(Integer idCaracteristica) {
+        this.idCaracteristica = idCaracteristica;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getUnidadMedida() {
+        return unidadMedida;
+    }
+
+    public void setUnidadMedida(String unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
 }

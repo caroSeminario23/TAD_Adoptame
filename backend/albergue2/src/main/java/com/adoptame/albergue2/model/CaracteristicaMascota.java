@@ -5,13 +5,16 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "caracteristica_mascota")
 public class CaracteristicaMascota {
-    @Id
+    @EmbeddedId
+    private CaracteristicaMascotaId id;
+
     @ManyToOne
+    @MapsId("idMascota")
     @JoinColumn(name = "id_mascota", nullable = false)
     private Mascota mascota;
 
-    @Id
     @ManyToOne
+    @MapsId("idCaracteristica")
     @JoinColumn(name = "id_caracteristica", nullable = false)
     private CaracteristicaComplementaria caracteristica;
 
@@ -26,8 +29,44 @@ public class CaracteristicaMascota {
     public CaracteristicaMascota(Mascota mascota,
                                 CaracteristicaComplementaria caracteristica, 
                                 String valor) {
+        this.id = new CaracteristicaMascotaId(mascota.getIdMascota(), caracteristica.getIdCaracteristica());
         this.mascota = mascota;
         this.caracteristica = caracteristica;
+        this.valor = valor;
+    }
+
+    // Getters y setters
+    public CaracteristicaMascotaId getId() {
+        return id;
+    }
+
+    public void setId(CaracteristicaMascotaId id) {
+        this.id = id;
+    }
+
+    public Mascota getMascota() {
+        return mascota;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+        this.id.setIdMascota(mascota.getIdMascota());
+    }
+
+    public CaracteristicaComplementaria getCaracteristica() {
+        return caracteristica;
+    }
+
+    public void setCaracteristica(CaracteristicaComplementaria caracteristica) {
+        this.caracteristica = caracteristica;
+        this.id.setIdCaracteristica(caracteristica.getIdCaracteristica());
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
         this.valor = valor;
     }
 }

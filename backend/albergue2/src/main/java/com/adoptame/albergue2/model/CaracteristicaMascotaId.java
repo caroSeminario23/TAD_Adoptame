@@ -35,5 +35,20 @@ public class CaracteristicaMascotaId implements Serializable {
         return Objects.hash(idMascota, idCaracteristica);
     }
 
-    // Getters y setters si los necesitas
+    // Getters y setters
+    public Integer getIdMascota() {
+        return idMascota;
+    }
+
+    public void setIdMascota(Integer idMascota) {
+        this.idMascota = idMascota;
+    }
+
+    public Integer getIdCaracteristica() {
+        return idCaracteristica;
+    }
+
+    public void setIdCaracteristica(Integer idCaracteristica) {
+        this.idCaracteristica = idCaracteristica;
+    }
 }
