@@ -23,6 +23,7 @@ BEGIN
   INTO: NEW.id_caracteristica
   FROM DUAL;
 END;
+/
 
 CREATE TABLE caracteristica_mascota
 (
@@ -68,6 +69,7 @@ BEGIN
   INTO: NEW.id_mascota
   FROM DUAL;
 END;
+/
 
 COMMENT ON COLUMN mascota.foto IS 'url';
 
@@ -105,6 +107,7 @@ BEGIN
   INTO: NEW.id_raza
   FROM DUAL;
 END;
+/
 
 CREATE TABLE tipo_mascota
 (
@@ -128,6 +131,7 @@ BEGIN
   INTO: NEW.id_tipo_mascota
   FROM DUAL;
 END;
+/
 
 ALTER TABLE mascota
   ADD CONSTRAINT FK_tipo_mascota_TO_mascota

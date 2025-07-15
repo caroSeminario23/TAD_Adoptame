@@ -3,6 +3,9 @@ package com.adoptame.albergue2.dto;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
+//import com.adoptame.albergue2.model.Raza;
+//import com.adoptame.albergue2.model.TipoMascota;
+
 public class MascotaDTO {
     private Integer idMascota;
     private String nombre;
@@ -11,8 +14,8 @@ public class MascotaDTO {
     private String sexo;
     private BigDecimal estatura;
     private BigDecimal peso;
-    private TipoMascotaDTO tipoMascota;
-    private RazaDTO raza;
+    private Integer idTipoMascota;
+    private Integer idRaza;
     private OffsetDateTime fecIngreso;
     private Boolean adoptado;
     private Boolean discapacidad;
@@ -26,8 +29,8 @@ public class MascotaDTO {
                     String sexo,
                     BigDecimal estatura, 
                     BigDecimal peso, 
-                    TipoMascotaDTO tipoMascota, 
-                    RazaDTO raza,
+                    Integer idTipoMascota, 
+                    Integer idRaza,
                     OffsetDateTime fecIngreso, 
                     Boolean adoptado, 
                     Boolean discapacidad) {
@@ -38,8 +41,8 @@ public class MascotaDTO {
         this.sexo = sexo;
         this.estatura = estatura;
         this.peso = peso;
-        this.tipoMascota = tipoMascota;
-        this.raza = raza;
+        this.idTipoMascota = idTipoMascota;
+        this.idRaza = idRaza;
         this.fecIngreso = fecIngreso;
         this.adoptado = adoptado;
         this.discapacidad = discapacidad;
@@ -88,17 +91,17 @@ public class MascotaDTO {
     public void setPeso(BigDecimal peso) {
         this.peso = peso;
     }
-    public TipoMascotaDTO getTipoMascota() {
-        return tipoMascota;
+    public Integer getIdTipoMascota() {
+        return idTipoMascota;
     }
-    public void setTipoMascota(TipoMascotaDTO tipoMascota) {
-        this.tipoMascota = tipoMascota;
+    public void setTipoMascota(Integer idTipoMascota) {
+        this.idTipoMascota = idTipoMascota;
     }
-    public RazaDTO getRaza() {
-        return raza;
+    public Integer getIdRaza() {
+        return idRaza;
     }
-    public void setRaza(RazaDTO raza) {
-        this.raza = raza;
+    public void setRaza(Integer idRaza) {
+        this.idRaza = idRaza;
     }
     public OffsetDateTime getFecIngreso() {
         return fecIngreso;

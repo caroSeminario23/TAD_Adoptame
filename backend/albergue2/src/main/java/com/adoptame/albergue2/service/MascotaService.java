@@ -7,11 +7,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import com.adoptame.albergue2.dto.MascotaDTO;
-import com.adoptame.albergue2.dto.RazaDTO;
-import com.adoptame.albergue2.dto.TipoMascotaDTO;
+//import com.adoptame.albergue2.dto.RazaDTO;
+//import com.adoptame.albergue2.dto.TipoMascotaDTO;
 import com.adoptame.albergue2.model.Mascota;
-import com.adoptame.albergue2.model.Raza;
-import com.adoptame.albergue2.model.TipoMascota;
+//import com.adoptame.albergue2.model.Raza;
+//import com.adoptame.albergue2.model.TipoMascota;
 import com.adoptame.albergue2.repository.MascotaRepository;
 
 @Service
@@ -29,21 +29,21 @@ public class MascotaService {
             entidad.getSexo(),
             entidad.getEstatura(),
             entidad.getPeso(),
-            convertirTipoMascotaADTO(entidad.getTipoMascota()),
-            convertirRazaADTO(entidad.getRaza()),
+            entidad.getTipoMascota() != null ? entidad.getTipoMascota().getIdTipoMascota() : null,
+            entidad.getRaza() != null ? entidad.getRaza().getIdRaza() : null,
             entidad.getFecIngreso(),
             entidad.getAdoptado(),
             entidad.getDiscapacidad()
         );
     }
 
-    private TipoMascotaDTO convertirTipoMascotaADTO(TipoMascota tipo) {
+    /*private TipoMascotaDTO convertirTipoMascotaADTO(TipoMascota tipo) {
         return new TipoMascotaDTO(tipo.getIdTipoMascota(), tipo.getNombre());
     }
 
     private RazaDTO convertirRazaADTO(Raza raza) {
         return new RazaDTO(raza.getIdRaza(), raza.getNombre());
-    }
+    }*/
 
     // Devolver todas las mascotas como DTO
     public List<MascotaDTO> obtenerTodasLasMascotas() {
