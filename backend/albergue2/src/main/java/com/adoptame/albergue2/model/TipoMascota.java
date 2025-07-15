@@ -3,7 +3,7 @@ package com.adoptame.albergue2.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tipo_mascota")
+@Table(name = "tipo_mascota", schema = "SYSTEM")
 public class TipoMascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,0 +1,8 @@
+HTTP/1.1 404 
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Tue, 15 Jul 2025 10:14:00 GMT
+Connection: close
+
+{"status":404,"message":"No se encontraron tipos de mascota."}
