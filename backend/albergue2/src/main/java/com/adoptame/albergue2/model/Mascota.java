@@ -5,46 +5,46 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
 @Entity
-@Table(name = "mascota")
+@Table(name = "MASCOTA")
 public class Mascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_mascota", nullable = false)
+    @Column(name = "ID_MASCOTA", nullable = false)
     private Integer idMascota;
 
-    @Column(name = "nombre", nullable = false, unique = true, length = 15)
+    @Column(name = "NOMBRE", nullable = false, unique = true, length = 15)
     private String nombre;
 
-    @Column(name = "foto", nullable = false, columnDefinition = "text")
+    @Column(name = "FOTO", nullable = false, columnDefinition = "text")
     private String foto;
 
-    @Column(name = "fec_nacimiento", nullable = false)
+    @Column(name = "FEC_NACIMIENTO", nullable = false)
     private java.sql.Date fecNacimiento;
 
-    @Column(name = "sexo", nullable = false, length = 1)
+    @Column(name = "SEXO", nullable = false, length = 1)
     private String sexo;
 
-    @Column(name = "estatura", nullable = false, precision = 3, scale = 2)
+    @Column(name = "ESTATURA", nullable = false, precision = 3, scale = 2)
     private BigDecimal estatura;
 
-    @Column(name = "peso", nullable = false, precision = 5, scale = 2)
+    @Column(name = "PESO", nullable = false, precision = 5, scale = 2)
     private BigDecimal peso;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_mascota", nullable = false)
+    @JoinColumn(name = "ID_TIPO_MASCOTA", nullable = false)
     private TipoMascota tipoMascota;
 
     @ManyToOne
-    @JoinColumn(name = "id_raza", nullable = false)
+    @JoinColumn(name = "ID_RAZA", nullable = false)
     private Raza raza;
 
-    @Column(name = "fec_ingreso", nullable = false)
+    @Column(name = "FEC_INGRESO", nullable = false)
     private OffsetDateTime fecIngreso;
 
-    @Column(name = "adoptado", nullable = false)
+    @Column(name = "ADOPTADO", nullable = false)
     private Boolean adoptado;
 
-    @Column(name = "discapacidad", nullable = false)
+    @Column(name = "DISCAPACIDAD", nullable = false)
     private Boolean discapacidad;
 
     // Constructor vacío (necesario para JPA)

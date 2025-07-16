@@ -3,22 +3,22 @@ package com.adoptame.albergue2.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "caracteristica_mascota")
+@Table(name = "CARACTERISTICA_MASCOTA")
 public class CaracteristicaMascota {
     @EmbeddedId
     private CaracteristicaMascotaId id;
 
     @ManyToOne
     @MapsId("idMascota")
-    @JoinColumn(name = "id_mascota", nullable = false)
+    @JoinColumn(name = "ID_MASCOTA", nullable = false)
     private Mascota mascota;
 
     @ManyToOne
     @MapsId("idCaracteristica")
-    @JoinColumn(name = "id_caracteristica", nullable = false)
+    @JoinColumn(name = "ID_CARACTERISTICA", nullable = false)
     private CaracteristicaComplementaria caracteristica;
 
-    @Column(name = "valor", nullable = false, length = 25)
+    @Column(name = "VALOR", nullable = false, length = 25)
     private String valor;
 
     // Constructor vacío (necesario para JPA)

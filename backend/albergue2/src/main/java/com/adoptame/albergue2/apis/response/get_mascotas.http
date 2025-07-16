@@ -1,0 +1,8 @@
+HTTP/1.1 200 
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 16 Jul 2025 06:14:15 GMT
+Connection: close
+
+{"message":"Mascotas encontradas.","status":200,"data":[{"idMascota":1,"nombre":"Rocky","foto":"http://fotos.com/rocky.jpg","fecNacimiento":"2018-05-10","sexo":"M","estatura":0.55,"peso":22.4,"idTipoMascota":1,"idRaza":1,"fecIngreso":"2025-07-16T00:35:49.615-05:00","adoptado":false,"discapacidad":false},{"idMascota":2,"nombre":"Luna","foto":"http://fotos.com/luna.jpg","fecNacimiento":"2020-08-25","sexo":"F","estatura":0.25,"peso":3.5,"idTipoMascota":2,"idRaza":2,"fecIngreso":"2025-07-16T00:35:49.622-05:00","adoptado":true,"discapacidad":false}]}

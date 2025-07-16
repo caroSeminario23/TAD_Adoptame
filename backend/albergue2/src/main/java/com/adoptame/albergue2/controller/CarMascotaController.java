@@ -14,7 +14,7 @@ public class CarMascotaController {
     @Autowired
     private CarMascotaService carMascotaService;
 
-    @GetMapping("/get_caracteristicas_mascota")
+    @GetMapping("/get_caracteristicas_mascotas")
     public ResponseEntity<Map<String, Object>> getCaracteristicasMascota() {
         List<CaracteristicaMascotaDTO> caracteristicas = carMascotaService.obtenerTodasLasCaracteristicasMascota();
 

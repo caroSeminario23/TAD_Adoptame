@@ -1,12 +1,12 @@
 # ENDPOINTS DE CARACTERISTICA COMPLEMENTARIA
 
-GET http://127.0.0.1:5000/car_complementarias_routes/get_car_complementarias
+GET http://127.0.0.1:8080/car_complementaria_routes/get_caracteristicas_complementarias
 #####
 
-POST http://127.0.0.1:5000/car_complementarias_routes/get_car_complementaria
+POST http://127.0.0.1:8080/car_complementaria_routes/get_caracteristica_complementaria
 Content-Type: application/json
 
 {
-    "id_caracteristica": 1
+    "id_caracteristica_complementaria": 1
 }
 #####

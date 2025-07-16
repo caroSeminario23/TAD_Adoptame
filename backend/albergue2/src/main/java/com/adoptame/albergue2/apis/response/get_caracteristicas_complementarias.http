@@ -1,0 +1,8 @@
+HTTP/1.1 200 
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 16 Jul 2025 06:16:51 GMT
+Connection: close
+
+{"message":"Características complementarias encontradas.","status":200,"data":[{"idCaracteristica":1,"nombre":"Sociabilidad","unidadMedida":"media"},{"idCaracteristica":2,"nombre":"Apto niños","unidadMedida":"sí/no"},{"idCaracteristica":3,"nombre":"Nivel energía","unidadMedida":"alta"}]}

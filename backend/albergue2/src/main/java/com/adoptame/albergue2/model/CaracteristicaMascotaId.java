@@ -7,10 +7,10 @@ import jakarta.persistence.*;
 @Embeddable
 public class CaracteristicaMascotaId implements Serializable {
 
-    @Column(name = "id_mascota")
+    @Column(name = "ID_MASCOTA")
     private Integer idMascota;
 
-    @Column(name = "id_caracteristica")
+    @Column(name = "ID_CARACTERISTICA")
     private Integer idCaracteristica;
 
     public CaracteristicaMascotaId() {}

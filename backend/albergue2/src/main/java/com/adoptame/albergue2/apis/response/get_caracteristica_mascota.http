@@ -1,0 +1,8 @@
+HTTP/1.1 200 
+Vary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Wed, 16 Jul 2025 06:16:06 GMT
+Connection: close
+
+{"message":"Característica de mascota encontrada.","status":200,"data":{"idMascota":2,"idCaracteristica":2,"valor":"Sí"}}

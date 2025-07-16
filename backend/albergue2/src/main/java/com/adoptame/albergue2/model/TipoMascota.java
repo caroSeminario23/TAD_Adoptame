@@ -3,14 +3,14 @@ package com.adoptame.albergue2.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tipo_mascota", schema = "SYSTEM")
+@Table(name = "TIPO_MASCOTA")
 public class TipoMascota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tipo_mascota", nullable = false)
+    @Column(name = "ID_TIPO_MASCOTA", nullable = false)
     private Integer idTipoMascota;
 
-    @Column(name = "nombre", nullable = false, unique = true, length = 20)
+    @Column(name = "NOMBRE", nullable = false, unique = true, length = 20)
     private String nombre;
 
     // Constructor vacío (necesario para JPA)

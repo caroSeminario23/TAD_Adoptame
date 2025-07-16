@@ -7,6 +7,6 @@ POST http://127.0.0.1:8080/mascota_routes/get_mascota
 Content-Type: application/json
 
 {
-    "id_mascota": 3
+    "id_mascota": 1
 }
 #####
