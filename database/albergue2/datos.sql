@@ -24,7 +24,7 @@ INSERT INTO mascota (
 );
 
 -- Insertar características complementarias
-INSERT INTO caracteristica_complementaria (nombre, unidad_medida) VALUES ('Nivel de energía', 'alta');
+INSERT INTO caracteristica_complementaria (nombre, unidad_medida) VALUES ('Nivel energía', 'alta');
 INSERT INTO caracteristica_complementaria (nombre, unidad_medida) VALUES ('Sociabilidad', 'media');
 INSERT INTO caracteristica_complementaria (nombre, unidad_medida) VALUES ('Apto niños', 'sí/no');
 
@@ -35,7 +35,7 @@ INSERT INTO caracteristica_complementaria (nombre, unidad_medida) VALUES ('Apto 
 INSERT INTO caracteristica_mascota (id_mascota, id_caracteristica, valor)
 VALUES (
   (SELECT id_mascota FROM mascota WHERE nombre = 'Rocky'),
-  (SELECT id_caracteristica FROM caracteristica_complementaria WHERE nombre = 'Nivel de energía'),
+  (SELECT id_caracteristica FROM caracteristica_complementaria WHERE nombre = 'Nivel energía'),
   'Alta'
 );
 
