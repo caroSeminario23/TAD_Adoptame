@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 264
+ETag: W/"108-ubMF+R7/YUduqGrTKLY0IuBG07Y"
+Date: Fri, 18 Jul 2025 07:20:56 GMT
+Connection: close
+
+[{"id_mascota":1,"id_caracteristica":1,"valor":"80"},{"id_mascota":1,"id_caracteristica":3,"valor":"2.5"},{"id_mascota":2,"id_caracteristica":3,"valor":"5.0"},{"id_mascota":3,"id_caracteristica":2,"valor":"10"},{"id_mascota":3,"id_caracteristica":3,"valor":"4.0"}]

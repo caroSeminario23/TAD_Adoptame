@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 113
+ETag: W/"71-nMzEP/EkqSUWRB+CVn2B288o7rI"
+Date: Fri, 18 Jul 2025 07:19:03 GMT
+Connection: close
+
+[{"id_raza":3,"nombre":"Holland Lop"},{"id_raza":1,"nombre":"Labrador Retriever"},{"id_raza":2,"nombre":"Persa"}]

@@ -1,0 +1,13 @@
+# ENDPOINTS DE CARACTERISTICA DE MASCOTA
+
+GET http://127.0.0.1:3000/car_mascotas_routes/get_car_mascotas
+#####
+
+POST http://127.0.0.1:3000/car_mascotas_routes/get_car_mascota
+Content-Type: application/json
+
+{
+    "id_caracteristica": 2,
+    "id_mascota": 3
+}
+#####

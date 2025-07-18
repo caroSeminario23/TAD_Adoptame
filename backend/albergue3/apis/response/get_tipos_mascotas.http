@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 118
+ETag: W/"76-n1nkTmq+Z/7Jc5G49tmLFY/GXDE"
+Date: Fri, 18 Jul 2025 07:15:54 GMT
+Connection: close
+
+[{"id_tipo_mascota":3,"nombre":"Conejo"},{"id_tipo_mascota":2,"nombre":"Gato"},{"id_tipo_mascota":1,"nombre":"Perro"}]

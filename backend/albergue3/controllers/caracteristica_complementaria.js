@@ -1,4 +1,4 @@
-const CaracteristicaComplementaria = require('../models/caracteristica_complementaria.model');
+const CaracteristicaComplementaria = require('../models/caracteristica_complementaria.js');
 
 const get_car_complementarias = (req, res) => {
     CaracteristicaComplementaria.obtenerTodos((err, resultados) => {

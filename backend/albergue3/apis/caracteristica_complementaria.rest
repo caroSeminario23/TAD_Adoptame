@@ -1,0 +1,12 @@
+# ENDPOINTS DE CARACTERISTICA COMPLEMENTARIA
+
+GET http://127.0.0.1:3000/car_complementarias_routes/get_car_complementarias
+#####
+
+POST http://127.0.0.1:3000/car_complementarias_routes/get_car_complementaria
+Content-Type: application/json
+
+{
+    "id_caracteristica": 1
+}
+#####

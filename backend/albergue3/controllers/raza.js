@@ -1,4 +1,4 @@
-const Raza = require('../models/raza.model');
+const Raza = require('../models/raza.js');
 
 const get_razas = (req, res) => {
     Raza.obtenerTodos((err, resultados) => {

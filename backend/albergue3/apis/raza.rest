@@ -1,0 +1,12 @@
+# ENDPOINTS DE RAZA
+
+GET http://127.0.0.1:3000/raza_routes/get_razas
+#####
+
+POST http://127.0.0.1:3000/raza_routes/get_raza
+Content-Type: application/json
+
+{
+    "id_raza": 2
+}
+#####

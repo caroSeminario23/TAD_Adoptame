@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 51
+ETag: W/"33-UMEPCeUSKVZwyupGu9jPezEzaCA"
+Date: Fri, 18 Jul 2025 07:21:48 GMT
+Connection: close
+
+{"id_mascota":3,"id_caracteristica":2,"valor":"10"}

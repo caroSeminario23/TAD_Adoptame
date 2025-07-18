@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 74
+ETag: W/"4a-UhYC94V1SkkzcS6QG+snFGITC8o"
+Date: Fri, 18 Jul 2025 07:22:42 GMT
+Connection: close
+
+{"id_caracteristica":1,"nombre":"Nivel Energía","unidad_medida":"puntos"}

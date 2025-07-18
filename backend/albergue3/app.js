@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const morgan = require('morgan');
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(morgan('dev'));
 
 // Importar rutas
 const tipoMascotaRoutes = require('./routes/tipo_mascota.js');
@@ -28,5 +30,5 @@ app.use((req, res) => {
 // Puerto de escucha
 const DB_PORT = process.env.PORT || 3000;
 app.listen(DB_PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
+  console.log(`Servidor escuchando en el puerto ${DB_PORT}`);
 });

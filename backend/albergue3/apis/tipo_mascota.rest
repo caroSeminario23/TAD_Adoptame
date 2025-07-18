@@ -1,0 +1,12 @@
+# ENDPOINTS DE TIPO DE MASCOTA
+
+GET http://127.0.0.1:3000/tipo_mascota_routes/get_tipos_mascotas
+#####
+
+POST http://127.0.0.1:3000/tipo_mascota_routes/get_tipo_mascota
+Content-Type: application/json
+
+{
+    "id_tmascota": 2
+}
+#####

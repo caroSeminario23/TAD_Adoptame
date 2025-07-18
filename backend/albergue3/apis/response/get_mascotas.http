@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 805
+ETag: W/"325-/oRHEQwys56qocFdZuioD82s6oA"
+Date: Fri, 18 Jul 2025 07:20:00 GMT
+Connection: close
+
+[{"id_mascota":1,"nombre":"Venom","foto":"https://micanino.com/venom.jpg","fec_nacimiento":"2022-03-01T05:00:00.000Z","sexo":"M","estatura":"0.55","peso":"20.00","id_tipo_mascota":1,"id_raza":1,"fec_ingreso":"2025-07-18T07:03:34.000Z","adoptado":0,"discapacidad":0},{"id_mascota":2,"nombre":"Princesa","foto":"https://mimichu.com/princesa.jpg","fec_nacimiento":"2020-07-15T05:00:00.000Z","sexo":"F","estatura":"0.30","peso":"4.50","id_tipo_mascota":2,"id_raza":2,"fec_ingreso":"2025-07-18T07:03:34.000Z","adoptado":1,"discapacidad":0},{"id_mascota":3,"nombre":"Copito","foto":"https://conejilandia.com/copito.jpg","fec_nacimiento":"2023-01-20T05:00:00.000Z","sexo":"M","estatura":"0.25","peso":"1.30","id_tipo_mascota":3,"id_raza":3,"fec_ingreso":"2025-07-18T07:03:34.000Z","adoptado":0,"discapacidad":1}]

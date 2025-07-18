@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 217
+ETag: W/"d9-QPBzyhdU2NXFo7YDyArIePb7XVQ"
+Date: Fri, 18 Jul 2025 07:22:21 GMT
+Connection: close
+
+[{"id_caracteristica":1,"nombre":"Nivel Energía","unidad_medida":"puntos"},{"id_caracteristica":2,"nombre":"Tamaño Orejas","unidad_medida":"cm"},{"id_caracteristica":3,"nombre":"Longitud Pelo","unidad_medida":"cm"}]

@@ -1,4 +1,4 @@
-const TipoMascota = require('../models/tipo_mascota.model');
+const TipoMascota = require('../models/tipo_mascota.js');
 
 const get_tipos_mascotas = (req, res) => {
     TipoMascota.obtenerTodos((err, resultados) => {
