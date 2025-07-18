@@ -41,7 +41,7 @@ ALTER TABLE mascota
   ADD CONSTRAINT UQ_nombre UNIQUE (nombre);
 
 ALTER TABLE mascota
-  ADD CONSTRAINT UQ_foto UNIQUE (foto);
+  ADD CONSTRAINT UQ_foto UNIQUE (foto(255));
 
 CREATE TABLE raza
 (

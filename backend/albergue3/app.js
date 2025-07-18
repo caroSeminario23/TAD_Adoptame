@@ -26,7 +26,7 @@ app.use((req, res) => {
 });
 
 // Puerto de escucha
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+const DB_PORT = process.env.PORT || 3000;
+app.listen(DB_PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
