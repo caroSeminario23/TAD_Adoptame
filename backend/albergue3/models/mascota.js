@@ -5,8 +5,8 @@ const Mascota = {
     db.query('SELECT * FROM mascota', callback);
   },
   
-  obtenerPorId: (id, callback) => {
-    db.query('SELECT * FROM mascota WHERE id_mascota = ?', [id], callback);
+  obtenerPorId: (id_mascota, callback) => {
+    db.query('SELECT * FROM mascota WHERE id_mascota = ?', [id_mascota], callback);
   },
 };
 

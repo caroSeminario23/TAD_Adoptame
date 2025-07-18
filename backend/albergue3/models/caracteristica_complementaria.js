@@ -5,8 +5,8 @@ const CaracteristicaComplementaria = {
     db.query('SELECT * FROM caracteristica_complementaria', callback);
   },
   
-  obtenerPorId: (id, callback) => {
-    db.query('SELECT * FROM caracteristica_complementaria WHERE id_caracteristica = ?', [id], callback);
+  obtenerPorId: (id_caracteristica, callback) => {
+    db.query('SELECT * FROM caracteristica_complementaria WHERE id_caracteristica = ?', [id_caracteristica], callback);
   },
 };
 
