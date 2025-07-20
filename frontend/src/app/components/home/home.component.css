@@ -11,17 +11,19 @@
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 4.5rem;
   color: #4b0082;
   width: 704px;
-  height: 720px;
+  height: 350px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   size: 500px;
 }
 
 .hero-text p {
   margin-top: 1rem;
+  font-size: 2rem;
   color: #555;
+  font-style: italic;
 }
 
 .hero-img {
@@ -33,28 +35,28 @@
 }
 
 .about {
-  /*padding: 2rem;
-  text-align: center;
-  background-color: #f1f5f9;*/
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #f1f5f9;
   gap: 2rem; /* espacio entre h2 y p */
   margin-top: 0;
+  font-size: 1.5rem;
 }
 
 .about h2 {
   color: #4b0082;
   flex: 1; /* ocupa la parte izquierda */
   margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .about p {
   flex: 2;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   color: #444;
 }
@@ -64,4 +66,15 @@
   display: block;
   margin-top: 2rem;
   border-radius: 8px;
+}
+
+.footer {
+  background-color: #4b0082;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 1rem;
 }
