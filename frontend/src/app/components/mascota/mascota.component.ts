@@ -22,7 +22,7 @@ export class MascotaComponent implements OnInit {
   modal: any;
 
   constructor(
-    //private mascotaService: MascotaService,
+    private mascotaService: MascotaService,
     private cdRef: ChangeDetectorRef
   ) {
   }
@@ -35,31 +35,71 @@ export class MascotaComponent implements OnInit {
   }
 
   lista(){
-    // this.mascotaService.list().subscribe(
-    //   data => {
-    //     this.mascotas = data;
-    //   }
-    // );
+    this.mascotaService.list().subscribe(
+      data => {
+        this.mascotas = data;
+        this.asignarNombresTipos(); 
+        this.asignarNombresRazas(); 
+      },
+      error => console.error("Error al obtener la lista de mascotas:", error)
+    );
+      
   }
 
   listaTipo(){
-    // this.mascotaService.typesList().subscribe(
-    //   data => {
-    //     this.tipos = data;
-    //   }
-    // );
+    this.mascotaService.listarTipos().subscribe(
+      data => {
+        this.tipos = data;
+        this.asignarNombresTipos();
+      }
+    );
   }
 
   listaRaza(){
-    // this.mascotaService.breedList().subscribe(
-    //   data => {
-    //     this.razas = data;
-    //   }
-    // );
+    this.mascotaService.listarRazas().subscribe(
+      data => {
+        this.razas = data;
+        this.asignarNombresRazas();
+      }
+    );
   }
+    
+
+  buscarTipo(mascota: any) {
+    this.mascotaService.buscarTipo(mascota).subscribe(
+      data => {
+        mascota.tipo_mascota = data.nombre;
+      },
+      error => {
+        console.error("Error al buscar tipo de mascota:", error);
+      }
+    );
+  }
+
+  asignarNombresTipos() {
+    this.mascotas.forEach(mascota => {
+      const tipo = this.tipos.find((t => t.id_tipo_mascota === mascota.id_tipo_mascota));
+      if (tipo) {
+        mascota.tipo_mascota = tipo;
+        console.log(`Tipo asignado: ${tipo.nombre} a la mascota: ${mascota.nombre}`);
+      }
+    });
+  }
+
+  asignarNombresRazas() {
+    this.mascotas.forEach(mascota => {
+      const raza = this.razas.find((r => r.id_raza === mascota.id_raza));
+      if (raza) {
+        mascota.raza = raza;
+        console.log(`Raza asignada: ${raza.nombre} a la mascota: ${mascota.nombre}`);
+      }
+    });
+  }
+
 
   abrirModal(mascota: Mascota){
     this.mascota = mascota;
+    //this.buscarTipo(mascota);
     this.modal.show();
     this.cdRef.detectChanges();
   }
