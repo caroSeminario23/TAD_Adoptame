@@ -25,11 +25,7 @@ def route_buscar_tipo_mascota():
             response = requests.post(f"{base_url}/tipo_mascota_routes/get_tipo_mascota", json=payload, timeout=5)
             if response.status_code == 200:
                 json_data = response.json().get("data", [])
-                # Agregar origen a cada elemento individual
-                for item in json_data:
-                    item_con_origen = item.copy()
-                    item_con_origen["origen"] = nombre
-                    resultados.append(item_con_origen)
+                resultados.extend(json_data)
         except Exception:
             continue
 

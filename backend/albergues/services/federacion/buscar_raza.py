@@ -25,11 +25,7 @@ def route_buscar_raza():
             response = requests.post(f"{base_url}/raza_routes/get_raza", json=payload, timeout=5)
             if response.status_code == 200:
                 json_data = response.json().get("data", [])
-                # Agregar origen a cada elemento individual
-                for item in json_data:
-                    item_con_origen = item.copy()
-                    item_con_origen["origen"] = nombre
-                    resultados.append(item_con_origen)
+                resultados.extend(json_data)
         except Exception:
             continue
 
