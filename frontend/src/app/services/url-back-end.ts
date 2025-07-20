@@ -1,6 +1,5 @@
 export class UrlBackEnd {
   public obtenerUrlBackend(): string {
-    return 'https://localhost:44385/api/';
-    //return 'http://localhost:80/api/';
+    return 'http://127.0.0.1:5001/';
   }
 }
