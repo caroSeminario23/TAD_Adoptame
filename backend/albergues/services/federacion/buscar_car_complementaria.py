@@ -9,8 +9,8 @@ ALBERGUES = {
     "albergue3": "http://127.0.0.1:3000"
 }
 
-federador_routes = Blueprint("federador_routes", __name__)
-@federador_routes.route("/buscar_caracteristica_complementaria", methods=["POST"])
+federado_routes = Blueprint("federado_routes", __name__)
+@federado_routes.route("/buscar_caracteristica_complementaria", methods=["POST"])
 
 def route_buscar_car_complementaria():
     payload = request.get_json('id_caracteristica')
@@ -26,11 +26,9 @@ def route_buscar_car_complementaria():
             response = requests.post(f"{base_url}/car_complementarias_routes/get_car_complementaria", json=payload, timeout=5)
             if response.status_code == 200:
                 json_data = response.json().get("data", [])
-                # Agregar origen a cada elemento individual
                 for item in json_data:
-                    item_con_origen = item.copy()
-                    item_con_origen["origen"] = nombre
-                    resultados.append(item_con_origen)
+                    item["origen"] = nombre
+                resultados.extend(json_data)
         except Exception:
             continue
 
