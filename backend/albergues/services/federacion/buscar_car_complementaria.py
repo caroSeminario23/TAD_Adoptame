@@ -1,12 +1,24 @@
+from flask import Blueprint, request, jsonify, make_response
 import requests
-from flask import jsonify, make_response
+
+federado_routes = Blueprint("federado_routes", __name__)
 
 ALBERGUES = {
     "albergue1": "http://127.0.0.1:5000",
     "albergue2": "http://127.0.0.1:8080",
     "albergue3": "http://127.0.0.1:3000"
 }
-def buscar_car_complementaria(payload):
+
+@federado_routes.route("/federado/caracteristica_complementaria/buscar", methods=["POST"])
+
+def route_buscar_car_complementaria():
+    payload = request.get_json('id_caracteristica')
+    if not payload:
+        return make_response(jsonify({
+            "message": "Payload no proporcionado.",
+            "status": 400
+        }), 400)
+
     resultados = []
     for nombre, base_url in ALBERGUES.items():
         try:
