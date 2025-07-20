@@ -1,12 +1,20 @@
+from flask import Blueprint, request, jsonify, make_response
 import requests
-from flask import jsonify, make_response
+
+federado_routes = Blueprint("federado_routes", __name__)
 
 ALBERGUES = {
     "albergue1": "http://127.0.0.1:5000",
     "albergue2": "http://127.0.0.1:8080",
     "albergue3": "http://127.0.0.1:3000"
 }
-def buscar_raza(payload):
+
+@federado_routes.route("/federado/raza/buscar", methods=["POST"])
+def route_buscar_raza():
+    payload = request.get_json('id_raza')
+    if not payload:
+        return make_response(jsonify({"message": "Payload no proporcionado.", "status": 400}), 400)
+
     resultados = []
     for nombre, base_url in ALBERGUES.items():
         try:
@@ -17,13 +25,6 @@ def buscar_raza(payload):
             resultados.append({"origen": nombre, "error": str(e)})
 
     if not resultados:
-        return make_response(jsonify({
-            "message": "Raza no encontrada.",
-            "status": 404
-        }), 404)
+        return make_response(jsonify({"message": "Raza no encontrada.", "status": 404}), 404)
     else:
-        return make_response(jsonify({
-            "message": "Raza encontrada.",
-            "status": 200,
-            "data": resultados
-        }), 200)
+        return make_response(jsonify({"message": "Raza encontrada.", "status": 200, "data": resultados}), 200)

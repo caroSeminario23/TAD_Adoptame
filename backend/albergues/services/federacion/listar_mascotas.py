@@ -1,12 +1,16 @@
+from flask import Blueprint, request, jsonify, make_response
 import requests
-from flask import jsonify, make_response
+
+federado_routes = Blueprint("federado_routes", __name__)
+
 
 ALBERGUES = {
     "albergue1": "http://127.0.0.1:5000",
     "albergue2": "http://127.0.0.1:8080",
     "albergue3": "http://127.0.0.1:3000"
 }
-def listar_mascotas():
+@federado_routes.route("/federado/mascota/listar", methods=["GET"])
+def route_listar_mascotas():
     resultados = []
     for nombre, base_url in ALBERGUES.items():
         try:
