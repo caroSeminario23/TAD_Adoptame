@@ -1,0 +1,19 @@
+# DATOS DE CONEXIÓN
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driver-class-name=
+
+# JPA/HIBERNATE
+spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+
+# ACTIVAR LOGGING
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+
+# SERVIDOR
+server.port=
