@@ -1,0 +1,4 @@
+# ENDPOINTS DE ALBERGUE
+
+GET http://127.0.0.1:5001/federador_routes/listar_razas
+#####

@@ -1,9 +1,9 @@
 # ENDPOINTS DE SERVICIO
 
-GET http://127.0.0.1:5000/servicio_routes/get_servicios
+GET http://127.0.0.1:5001/servicio_routes/get_servicios
 #####
 
-POST http://127.0.0.1:5000/servicio_routes/get_servicio
+POST http://127.0.0.1:5001/servicio_routes/get_servicio
 Content-Type: application/json
 
 {
