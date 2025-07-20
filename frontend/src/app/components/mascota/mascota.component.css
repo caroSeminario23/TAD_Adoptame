@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === Navbar === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar-menu li a.active {
+  color: #8e44ad;
+}
+
+/* === Filtros === */
+.filters {
+  width: 250px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.filters h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.filter-group {
+  margin-bottom: 1rem;
+}
+
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* === Contenido principal === */
+#pages-container {
+  margin-left: 280px;
+  padding: 2rem;
+}
+
+.pet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card-body p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.card-body button {
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card-body button:hover {
+  background-color: #732d91;
+}
+
+/* === Secciones de páginas (paginación) === */
+#pages-container section {
+  display: none;
+}
+
+#pages-container section.active {
+  display: block;
+}
+
+/* === Paginación === */
+.pagination {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination button:hover {
+  background-color: #eee;
+}
+
+.pagination .page-number.active {
+  background-color: #8e44ad;
+  color: white;
+  border-color: #8e44ad;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #eee;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+/* Eleva el modal por encima del backdrop */
+#Modal.modal {
+  z-index: 1050;
+}
+
+/* Ajusta el ancho y lo separa de la barra de navegación */
+#Modal .modal-dialog {
+  max-width: 800px;
+  margin: 80px auto; /* 80px para dejar espacio debajo del header */
+}
+
+/* Redondeo, sombra ligera y fondo blanco */
+#Modal .modal-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* Cabecera morada con texto blanco, sin borde inferior */
+#Modal .modal-header {
+  background: #6f42c1;
+  color: #fff;
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+/* Botón de cerrar en blanco */
+#Modal .modal-header .close {
+  color: #fff;
+  opacity: 1;
+  font-size: 1.4rem;
+}
+
+/* Cuerpo del modal con padding uniforme */
+#Modal .modal-body {
+  padding: 1.5rem;
+  color: #333;
+}
+
+/* Etiquetas en negrita */
+#Modal .form-group label {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs deshabilitados con fondo gris claro */
+#Modal .form-control[disabled] {
+  background-color: #f7f7f7;
+  color: #555;
+  cursor: default;
+}
+
+/* Botón Guardar verde consistente con Bootstrap */
+#Modal .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+/* Pie del modal si lo necesitas */
+#Modal .modal-footer {
+  background: #f1f1f1;
+  padding: 0.75rem 1.5rem;
+  text-align: right;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .filters {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  #pages-container {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .pet-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,67 @@
+
+.hero {
+  display: flex;
+  align-items: flex-start; /* imagen desde el borde superior */
+  justify-content: space-between;
+  background: linear-gradient(#e0e7ff, #f9fafb);
+  padding: 3rem 2rem;
+  min-height: 600px; /* alto mínimo para que la imagen tenga espacio */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 0px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #4b0082;
+  width: 704px;
+  height: 720px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  size: 500px;
+}
+
+.hero-text p {
+  margin-top: 1rem;
+  color: #555;
+}
+
+.hero-img {
+  width: 500px; /* aumenta el tamaño de la imagen */
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  margin-top: 0; /* elimina separación superior */
+}
+
+.about {
+  /*padding: 2rem;
+  text-align: center;
+  background-color: #f1f5f9;*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f1f5f9;
+  gap: 2rem; /* espacio entre h2 y p */
+  margin-top: 0;
+}
+
+.about h2 {
+  color: #4b0082;
+  flex: 1; /* ocupa la parte izquierda */
+  margin: 0;
+}
+
+.about p {
+  flex: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #444;
+}
+
+.image-section img {
+  width: 100%;
+  display: block;
+  margin-top: 2rem;
+  border-radius: 8px;
+}
