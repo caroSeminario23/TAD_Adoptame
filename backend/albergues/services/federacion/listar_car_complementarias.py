@@ -8,8 +8,8 @@ ALBERGUES = {
     "albergue3": "http://127.0.0.1:3000"
 }
 
-federado_routes = Blueprint("federado_routes", __name__)
-@federado_routes.route("/listar_car_complementarias", methods=["GET"])
+federador_routes = Blueprint("federador_routes", __name__)
+@federador_routes.route("/listar_car_complementarias", methods=["GET"])
 def listar_car_complementarias():
     resultados = []
     for nombre, base_url in ALBERGUES.items():

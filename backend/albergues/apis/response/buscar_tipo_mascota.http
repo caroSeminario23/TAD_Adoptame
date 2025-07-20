@@ -1,0 +1,43 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.12.5
+Date: Sun, 20 Jul 2025 05:04:51 GMT
+Content-Type: application/json
+Content-Length: 654
+Access-Control-Allow-Origin: localhost
+Connection: close
+
+{
+  "data": [
+    {
+      "data": {
+        "data": {
+          "id_tipo_mascota": 1,
+          "nombre": "Perro"
+        },
+        "message": "Tipo de mascota encontrada.",
+        "status": 200
+      },
+      "origen": "albergue1"
+    },
+    {
+      "data": {
+        "data": {
+          "idTipoMascota": 1,
+          "nombre": "Perro"
+        },
+        "message": "Tipo de mascota encontrado.",
+        "status": 200
+      },
+      "origen": "albergue2"
+    },
+    {
+      "data": {
+        "id_tipo_mascota": 1,
+        "nombre": "Perro"
+      },
+      "origen": "albergue3"
+    }
+  ],
+  "message": "Tipo de mascota encontrado.",
+  "status": 200
+}

@@ -1,95 +1,60 @@
 HTTP/1.1 200 OK
 Server: Werkzeug/3.1.3 Python/3.12.5
-Date: Sun, 20 Jul 2025 01:05:13 GMT
+Date: Sun, 20 Jul 2025 05:01:52 GMT
 Content-Type: application/json
-Content-Length: 1686
+Content-Length: 781
 Access-Control-Allow-Origin: localhost
 Connection: close
 
 {
   "data": [
     {
-      "data": {
-        "data": [
-          {
-            "id_raza": 1,
-            "nombre": "Labrador"
-          },
-          {
-            "id_raza": 2,
-            "nombre": "Golden Retriever"
-          },
-          {
-            "id_raza": 3,
-            "nombre": "Persa"
-          },
-          {
-            "id_raza": 4,
-            "nombre": "Siames"
-          },
-          {
-            "id_raza": 5,
-            "nombre": "Husky"
-          },
-          {
-            "id_raza": 6,
-            "nombre": "Bulldog"
-          },
-          {
-            "id_raza": 7,
-            "nombre": "Angora"
-          },
-          {
-            "id_raza": 8,
-            "nombre": "Canario"
-          },
-          {
-            "id_raza": 9,
-            "nombre": "Pomerania"
-          },
-          {
-            "id_raza": 10,
-            "nombre": "Betta"
-          }
-        ],
-        "message": "Razas encontradas.",
-        "status": 200
-      },
-      "origen": "albergue1"
+      "id_raza": 1,
+      "nombre": "Labrador"
     },
     {
-      "data": {
-        "data": [
-          {
-            "idRaza": 1,
-            "nombre": "Labrador"
-          },
-          {
-            "idRaza": 2,
-            "nombre": "Persa"
-          }
-        ],
-        "message": "Razas encontradas.",
-        "status": 200
-      },
-      "origen": "albergue2"
+      "id_raza": 2,
+      "nombre": "Golden Retriever"
     },
     {
-      "data": [
-        {
-          "id_raza": 3,
-          "nombre": "Holland Lop"
-        },
-        {
-          "id_raza": 1,
-          "nombre": "Labrador Retriever"
-        },
-        {
-          "id_raza": 2,
-          "nombre": "Persa"
-        }
-      ],
-      "origen": "albergue3"
+      "id_raza": 3,
+      "nombre": "Persa"
+    },
+    {
+      "id_raza": 4,
+      "nombre": "Siames"
+    },
+    {
+      "id_raza": 5,
+      "nombre": "Husky"
+    },
+    {
+      "id_raza": 6,
+      "nombre": "Bulldog"
+    },
+    {
+      "id_raza": 7,
+      "nombre": "Angora"
+    },
+    {
+      "id_raza": 8,
+      "nombre": "Canario"
+    },
+    {
+      "id_raza": 9,
+      "nombre": "Pomerania"
+    },
+    {
+      "id_raza": 10,
+      "nombre": "Betta"
+    },
+    {
+      "idRaza": 1,
+      "nombre": "Labrador"
+    },
+    {
+      "idRaza": 2,
+      "nombre": "Persa"
     }
   ],
   "message": "Razas encontradas.",

@@ -1,0 +1,22 @@
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.3 Python/3.12.5
+Date: Sun, 20 Jul 2025 05:03:25 GMT
+Content-Type: application/json
+Content-Length: 240
+Access-Control-Allow-Origin: localhost
+Connection: close
+
+{
+  "data": [
+    {
+      "data": {
+        "id_caracteristica": 2,
+        "id_mascota": 3,
+        "valor": "10"
+      },
+      "origen": "albergue3"
+    }
+  ],
+  "message": "Caracter\u00edstica de mascota encontrada.",
+  "status": 200
+}

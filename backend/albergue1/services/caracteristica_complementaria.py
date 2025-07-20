@@ -4,7 +4,7 @@ from utils.db import db
 from models.caracteristica_complementaria import Caracteristica_complementaria
 from schemas.caracteristica_complementaria import caracteristica_complementaria_schema, caracteristicas_complementarias_schema
 
-car_complementarias_routes = Blueprint('car_complemetarias_routes', __name__)
+car_complementarias_routes = Blueprint('car_complementarias_routes', __name__)
 
 @car_complementarias_routes.route("/get_car_complementarias", methods=["GET"])
 def get_car_complementarias():

@@ -13,12 +13,12 @@ const get_tipos_mascotas = (req, res) => {
 };
 
 const get_tipo_mascota = (req, res) => {
-    const { id_tmascota } = req.body;
-    if (!id_tmascota) {
+    const { id_tipo_mascota } = req.body;
+    if (!id_tipo_mascota) {
         return res.status(400).json({ mensaje: 'ID de tipo de mascota es requerido' });
     }
     
-    TipoMascota.obtenerPorId(id_tmascota, (err, resultado) => {
+    TipoMascota.obtenerPorId(id_tipo_mascota, (err, resultado) => {
         if (err) {
             return res.status(500).json({ mensaje: 'Error en el servidor', error: err });
         }

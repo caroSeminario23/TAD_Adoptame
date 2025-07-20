@@ -1,9 +1,9 @@
 # ENDPOINTS DE CARACTERISTICA DE MASCOTA
 
-GET http://127.0.0.1:8080/car_mascota_routes/get_caracteristicas_mascotas
+GET http://127.0.0.1:8080/car_mascotas_routes/get_car_mascotas
 #####
 
-POST http://127.0.0.1:8080/car_mascota_routes/get_caracteristica_mascota
+POST http://127.0.0.1:8080/car_mascotas_routes/get_car_mascota
 Content-Type: application/json
 
 {

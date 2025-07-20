@@ -1,4 +1,65 @@
-# ENDPOINTS DE ALBERGUE
+# ENDPOINTS DE FEDERADOR
+
+GET http://127.0.0.1:5001/federador_routes/listar_car_complementarias
+#####
+
+GET http://127.0.0.1:5001/federador_routes/listar_car_mascotas
+#####
+
+GET http://127.0.0.1:5001/federador_routes/listar_mascotas
+#####
 
 GET http://127.0.0.1:5001/federador_routes/listar_razas
+#####
+
+GET http://127.0.0.1:5001/federador_routes/listar_tipos_mascotas
+#####
+
+POST http://127.0.0.1:5001/federador_routes/buscar_caracteristica_complementaria
+Content-Type: application/json
+
+{
+    "id_caracteristica": 1
+}
+#####
+
+POST http://127.0.0.1:5001/federador_routes/buscar_car_mascota
+Content-Type: application/json
+
+{
+    "id_caracteristica": 2,
+    "id_mascota": 3
+}
+#####
+
+POST http://127.0.0.1:5001/federador_routes/buscar_caracteristica_complementaria
+Content-Type: application/json
+
+{
+    "id_caracteristica": 1
+}
+#####
+
+POST http://127.0.0.1:5001/federador_routes/buscar_mascota
+Content-Type: application/json
+
+{
+    "id_mascota": 1
+}
+#####
+
+POST http://127.0.0.1:5001/federador_routes/buscar_raza
+Content-Type: application/json
+
+{
+    "id_raza": 1
+}
+#####
+
+POST http://127.0.0.1:5001/federador_routes/buscar_tipo_mascota
+Content-Type: application/json
+
+{
+    "id_tipo_mascota": 1
+}
 #####

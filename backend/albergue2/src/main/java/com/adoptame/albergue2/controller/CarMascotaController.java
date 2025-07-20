@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/car_mascota_routes")
+@RequestMapping("/car_mascotas_routes")
 public class CarMascotaController {
     @Autowired
     private CarMascotaService carMascotaService;
 
-    @GetMapping("/get_caracteristicas_mascotas")
+    @GetMapping("/get_car_mascotas")
     public ResponseEntity<Map<String, Object>> getCaracteristicasMascota() {
         List<CaracteristicaMascotaDTO> caracteristicas = carMascotaService.obtenerTodasLasCaracteristicasMascota();
 
@@ -34,7 +34,7 @@ public class CarMascotaController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/get_caracteristica_mascota")
+    @PostMapping("/get_car_mascota")
     public ResponseEntity<Map<String, Object>> getCaracteristicaMascota(@RequestBody Map<String, Object> payload) {
         if (!payload.containsKey("id_mascota") || !payload.containsKey("id_caracteristica")) {
             Map<String, Object> response = Map.of(

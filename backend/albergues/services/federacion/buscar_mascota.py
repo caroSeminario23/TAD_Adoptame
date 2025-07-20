@@ -9,8 +9,8 @@ ALBERGUES = {
     "albergue3": "http://127.0.0.1:3000"
 }
 
-federado_routes = Blueprint("federado_routes", __name__)
-@federado_routes.route("/federado/mascota/buscar", methods=["POST"])
+federador_routes = Blueprint("federador_routes", __name__)
+@federador_routes.route("/buscar_mascota", methods=["POST"])
 def route_buscar_mascota():
     payload = request.get_json('id_mascota')
     if not payload:
