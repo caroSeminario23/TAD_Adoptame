@@ -17,7 +17,11 @@ def listar_car_complementarias():
             response = requests.get(f"{base_url}/car_complementarias_routes/get_car_complementarias", timeout=5)
             if response.status_code == 200:
                 json_data = response.json().get("data", [])
-                resultados.extend(json_data)
+                # Agregar origen a cada elemento individual
+                for item in json_data:
+                    item_con_origen = item.copy()
+                    item_con_origen["origen"] = nombre
+                    resultados.append(item_con_origen)
         except Exception:
             continue
 
