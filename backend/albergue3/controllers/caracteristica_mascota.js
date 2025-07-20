@@ -8,7 +8,11 @@ const get_car_mascotas = (req, res) => {
         if (resultados.length === 0) {
             return res.status(404).json({ mensaje: 'No se encontraron características de mascotas' });
         }
-        res.status(200).json(resultados);
+        res.status(200).json({
+            message: 'Características de mascotas encontradas.',
+            status: 200,
+            data: resultados
+        });
     });
 };
 
@@ -27,7 +31,11 @@ const get_car_mascota = (req, res) => {
         if (!resultado || resultado.length === 0) {
             return res.status(404).json({ mensaje: 'Característica de mascota no encontrada' });
         }
-        res.status(200).json(resultado[0]);
+        res.status(200).json({
+            message: 'Característica de mascota encontrada.',
+            status: 200,
+            data: resultado[0]
+        });
     });
 }
 

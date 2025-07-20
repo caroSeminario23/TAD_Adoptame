@@ -29,7 +29,11 @@ const get_mascota = (req, res) => {
         if (!resultado || resultado.length === 0) {
             return res.status(404).json({ mensaje: 'Mascota no encontrada' });
         }
-        res.status(200).json(resultado[0]);
+        res.status(200).json({
+            message: 'Mascota encontrada.',
+            status: 200,
+            data: resultado[0]
+        });
     });
 }
 

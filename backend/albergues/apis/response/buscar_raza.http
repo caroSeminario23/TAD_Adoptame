@@ -1,43 +1,18 @@
 HTTP/1.1 200 OK
 Server: Werkzeug/3.1.3 Python/3.12.5
-Date: Sun, 20 Jul 2025 05:04:36 GMT
+Date: Sun, 20 Jul 2025 20:25:42 GMT
 Content-Type: application/json
-Content-Length: 617
-Access-Control-Allow-Origin: localhost
+Content-Length: 150
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
 Connection: close
 
 {
-  "data": [
-    {
-      "data": {
-        "data": {
-          "id_raza": 1,
-          "nombre": "Labrador"
-        },
-        "message": "Raza encontrada.",
-        "status": 200
-      },
-      "origen": "albergue1"
-    },
-    {
-      "data": {
-        "data": {
-          "idRaza": 1,
-          "nombre": "Labrador"
-        },
-        "message": "Raza encontrada.",
-        "status": 200
-      },
-      "origen": "albergue2"
-    },
-    {
-      "data": {
-        "id_raza": 1,
-        "nombre": "Labrador Retriever"
-      },
-      "origen": "albergue3"
-    }
-  ],
+  "data": {
+    "id_raza": 1,
+    "nombre": "Labrador Retriever",
+    "origen": "albergue3"
+  },
   "message": "Raza encontrada.",
   "status": 200
 }

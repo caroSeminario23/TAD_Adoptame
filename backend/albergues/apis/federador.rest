@@ -19,7 +19,8 @@ POST http://127.0.0.1:5001/federador_routes/buscar_caracteristica_complementaria
 Content-Type: application/json
 
 {
-    "id_caracteristica": 1
+    "id_caracteristica": 1,
+    "origen": "albergue3"
 }
 #####
 
@@ -27,16 +28,9 @@ POST http://127.0.0.1:5001/federador_routes/buscar_car_mascota
 Content-Type: application/json
 
 {
-    "id_caracteristica": 2,
-    "id_mascota": 3
-}
-#####
-
-POST http://127.0.0.1:5001/federador_routes/buscar_caracteristica_complementaria
-Content-Type: application/json
-
-{
-    "id_caracteristica": 1
+    "id_caracteristica": 3,
+    "id_mascota": 1,
+    "origen": "albergue2"
 }
 #####
 
@@ -44,7 +38,8 @@ POST http://127.0.0.1:5001/federador_routes/buscar_mascota
 Content-Type: application/json
 
 {
-    "id_mascota": 1
+    "id_mascota": 2,
+    "origen": "albergue3"
 }
 #####
 
@@ -52,7 +47,8 @@ POST http://127.0.0.1:5001/federador_routes/buscar_raza
 Content-Type: application/json
 
 {
-    "id_raza": 1
+    "id_raza": 1,
+    "origen": "albergue3"
 }
 #####
 
@@ -60,6 +56,7 @@ POST http://127.0.0.1:5001/federador_routes/buscar_tipo_mascota
 Content-Type: application/json
 
 {
-    "id_tipo_mascota": 1
+    "id_tipo_mascota": 2,
+    "origen": "albergue1"
 }
 #####

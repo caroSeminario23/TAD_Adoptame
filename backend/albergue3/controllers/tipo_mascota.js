@@ -29,7 +29,11 @@ const get_tipo_mascota = (req, res) => {
         if (!resultado || resultado.length === 0) {
             return res.status(404).json({ mensaje: 'Tipo de mascota no encontrado' });
         }
-        res.status(200).json(resultado[0]);
+        res.status(200).json({
+            message: 'Tipo de mascota encontrado.',
+            status: 200,
+            data: resultado[0]
+        });
     });
 }
 

@@ -1,73 +1,28 @@
 HTTP/1.1 200 OK
 Server: Werkzeug/3.1.3 Python/3.12.5
-Date: Sun, 20 Jul 2025 05:04:20 GMT
+Date: Sun, 20 Jul 2025 20:29:07 GMT
 Content-Type: application/json
-Content-Length: 1613
-Access-Control-Allow-Origin: localhost
+Content-Length: 472
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
 Connection: close
 
 {
-  "data": [
-    {
-      "data": {
-        "data": {
-          "adoptado": false,
-          "discapacidad": false,
-          "estatura": "0.60",
-          "fec_ingreso": "2025-07-13T13:28:43.623345-05:00",
-          "fec_nacimiento": "2022-01-15",
-          "foto": "url1.jpg",
-          "id_mascota": 1,
-          "id_raza": 1,
-          "id_tipo_mascota": 1,
-          "nombre": "Toby",
-          "peso": "20.50",
-          "sexo": "M"
-        },
-        "message": "Mascota encontrada.",
-        "status": 200
-      },
-      "origen": "albergue1"
-    },
-    {
-      "data": {
-        "data": {
-          "adoptado": false,
-          "discapacidad": false,
-          "estatura": 0.55,
-          "fecIngreso": "2025-07-16T00:35:49.615-05:00",
-          "fecNacimiento": "2018-05-10",
-          "foto": "http://fotos.com/rocky.jpg",
-          "idMascota": 1,
-          "idRaza": 1,
-          "idTipoMascota": 1,
-          "nombre": "Rocky",
-          "peso": 22.4,
-          "sexo": "M"
-        },
-        "message": "Mascota encontrada.",
-        "status": 200
-      },
-      "origen": "albergue2"
-    },
-    {
-      "data": {
-        "adoptado": 0,
-        "discapacidad": 0,
-        "estatura": "0.55",
-        "fec_ingreso": "2025-07-18T07:03:34.000Z",
-        "fec_nacimiento": "2022-03-01T05:00:00.000Z",
-        "foto": "https://micanino.com/venom.jpg",
-        "id_mascota": 1,
-        "id_raza": 1,
-        "id_tipo_mascota": 1,
-        "nombre": "Venom",
-        "peso": "20.00",
-        "sexo": "M"
-      },
-      "origen": "albergue3"
-    }
-  ],
+  "data": {
+    "adoptado": 1,
+    "discapacidad": 0,
+    "estatura": "0.30",
+    "fec_ingreso": "2025-07-18T07:03:34.000Z",
+    "fec_nacimiento": "2020-07-15T05:00:00.000Z",
+    "foto": "https://images.pexels.com/photos/2173872/pexels-photo-2173872.jpeg",
+    "id_mascota": 2,
+    "id_raza": 2,
+    "id_tipo_mascota": 2,
+    "nombre": "Princesa",
+    "origen": "albergue3",
+    "peso": "4.50",
+    "sexo": "F"
+  },
   "message": "Mascota encontrada.",
   "status": 200
 }

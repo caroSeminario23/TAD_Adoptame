@@ -1,46 +1,19 @@
 HTTP/1.1 200 OK
 Server: Werkzeug/3.1.3 Python/3.12.5
-Date: Sun, 20 Jul 2025 05:03:45 GMT
+Date: Sun, 20 Jul 2025 20:40:13 GMT
 Content-Type: application/json
-Content-Length: 848
-Access-Control-Allow-Origin: localhost
+Content-Length: 221
+Access-Control-Allow-Origin: http://localhost:4200
+Vary: Origin
 Connection: close
 
 {
-  "data": [
-    {
-      "data": {
-        "data": {
-          "id_caracteristica": 1,
-          "nombre": "Energ\u00eda",
-          "unidad_medida": "niveles"
-        },
-        "message": "Caracteristica complementaria encontrada.",
-        "status": 200
-      },
-      "origen": "albergue1"
-    },
-    {
-      "data": {
-        "data": {
-          "idCaracteristica": 1,
-          "nombre": "Sociabilidad",
-          "unidadMedida": "media"
-        },
-        "message": "Caracter\u00edstica complementaria encontrada.",
-        "status": 200
-      },
-      "origen": "albergue2"
-    },
-    {
-      "data": {
-        "id_caracteristica": 1,
-        "nombre": "Nivel Energ\u00eda",
-        "unidad_medida": "puntos"
-      },
-      "origen": "albergue3"
-    }
-  ],
+  "data": {
+    "id_caracteristica": 1,
+    "nombre": "Nivel Energ\u00eda",
+    "origen": "albergue3",
+    "unidad_medida": "puntos"
+  },
   "message": "Caracter\u00edstica complementaria encontrada.",
   "status": 200
 }

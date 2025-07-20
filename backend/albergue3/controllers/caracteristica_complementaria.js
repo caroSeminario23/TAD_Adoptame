@@ -8,7 +8,11 @@ const get_car_complementarias = (req, res) => {
         if (resultados.length === 0) {
             return res.status(404).json({ mensaje: 'No se encontraron caracteristicas complementarias' });
         }
-        res.status(200).json(resultados);
+        res.status(200).json({
+            message: 'Características complementarias encontradas.',
+            status: 200,
+            data: resultados
+        });
     });
 };
 
@@ -25,7 +29,11 @@ const get_car_complementaria = (req, res) => {
         if (!resultado || resultado.length === 0) {
             return res.status(404).json({ mensaje: 'Caracteristica complementaria no encontrada' });
         }
-        res.status(200).json(resultado[0]);
+        res.status(200).json({
+            message: 'Característica complementaria encontrada.',
+            status: 200,
+            data: resultado[0]
+        });
     });
 }
 

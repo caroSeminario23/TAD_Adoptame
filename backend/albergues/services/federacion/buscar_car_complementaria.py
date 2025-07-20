@@ -11,33 +11,50 @@ federador_routes = Blueprint("federador_routes", __name__)
 @federador_routes.route("/buscar_caracteristica_complementaria", methods=["POST"])
 
 def route_buscar_car_complementaria():
-    payload = request.get_json('id_caracteristica')
-    if not payload:
+    payload = request.get_json() # incluye "id_caracteristica" y "origen"
+
+    origen = payload.get("origen")
+    id_caracteristica = payload.get("id_caracteristica")
+
+    if not origen or not id_caracteristica:
         return make_response(jsonify({
-            "message": "Payload no proporcionado.",
+            "message": "Datos incompletos",
             "status": 400
         }), 400)
 
-    resultados = []
-    for nombre, base_url in ALBERGUES.items():
-        try:
-            response = requests.post(f"{base_url}/car_complementarias_routes/get_car_complementaria", json=payload, timeout=5)
-            if response.status_code == 200:
-                json_data = response.json().get("data", [])
-                for item in json_data:
-                    item["origen"] = nombre
-                resultados.extend(json_data)
-        except Exception:
-            continue
+    url = ALBERGUES.get(origen)
 
-    if not resultados:
+    if not url:
         return make_response(jsonify({
-            "message": "Característica complementaria no encontrada.",
+            "message": f"Origen '{origen}' no válido.",
             "status": 404
         }), 404)
-    else:
+
+    try:
+        response = requests.post(f"{url}/car_complementarias_routes/get_car_complementaria", json={"id_caracteristica": id_caracteristica}, timeout=5)
+
+        if response.status_code == 200:
+            albergue_response = response.json()
+            caracteristica_data = albergue_response.get("data")
+
+            # Agregamos el origen al resultado
+            if isinstance(caracteristica_data, dict):
+                caracteristica_data["origen"] = origen
+
+            return make_response(jsonify({
+                "data": caracteristica_data,
+                "message": "Característica complementaria encontrada.",
+                "status": 200
+            }), 200)
+        else:
+            return make_response(jsonify({
+                "message": "No se encontró la característica complementaria.",
+                "status": 404
+            }), 404)
+    
+    except Exception as e:
+        print(f"Error al conectar con {origen}: {e}")
         return make_response(jsonify({
-            "message": "Característica complementaria encontrada.",
-            "status": 200,
-            "data": resultados
-        }), 200)
+            "message": f"No se pudo conectar con el origen {origen}.",
+            "status": 500
+        }), 500)
