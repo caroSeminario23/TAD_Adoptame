@@ -25,9 +25,14 @@ def route_buscar_car_complementaria():
         try:
             response = requests.post(f"{base_url}/car_complementarias_routes/get_car_complementaria", json=payload, timeout=5)
             if response.status_code == 200:
-                resultados.append({"origen": nombre, "data": response.json()})
-        except Exception as e:
-            resultados.append({"origen": nombre, "error": str(e)})
+                json_data = response.json().get("data", [])
+                # Agregar origen a cada elemento individual
+                for item in json_data:
+                    item_con_origen = item.copy()
+                    item_con_origen["origen"] = nombre
+                    resultados.append(item_con_origen)
+        except Exception:
+            continue
 
     if not resultados:
         return make_response(jsonify({
