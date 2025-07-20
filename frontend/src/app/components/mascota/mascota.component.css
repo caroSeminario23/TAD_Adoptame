@@ -153,11 +153,12 @@ body {
 .pagination {
   text-align: center;
   margin-top: 2rem;
+  padding-left: 19rem;
 }
 
 .pagination button {
-  padding: 0.5rem 1rem;
-  margin: 0 0.5rem;
+  padding: 0.5rem 4rem;
+  margin: 0 1rem;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;

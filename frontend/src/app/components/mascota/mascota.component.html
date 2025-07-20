@@ -2,8 +2,9 @@
   <h2>Filtros</h2>
   <div class="filter-group">
     <label for="typeFilter">Tipo</label>
-    <select *ngIf="tipos.length > 0" id="typeFilter">
-      <option *ngFor="let tipo of tipos" value="{{tipo.id_tipo_mascota}}">{{tipo.nombre}}</option>
+    <select *ngIf="tipos.length > 0" id="typeFilter" [(ngModel)]="tipoSeleccionado">
+      <option [ngValue]="0">Todos</option> <!-- opción 'Todos' -->
+      <option *ngFor="let tipo of tipos" [ngValue]="tipo.id_tipo_mascota">{{tipo.nombre}}</option>
     </select>
     <select *ngIf="tipos.length <= 0" id="typeFilter">
       <option value="todos">Todos</option>
@@ -16,8 +17,9 @@
   </div>
   <div class="filter-group">
     <label for="razaFilter">Raza</label>
-    <select *ngIf="razas.length > 0" id="typeFilter">
-      <option *ngFor="let raza of razas" value="{{raza.id_raza}}">{{raza.nombre}}</option>
+    <select *ngIf="razas.length > 0" id="typeFilter" [(ngModel)]="razaSeleccionada">
+      <option [ngValue]="0">Todos</option> <!-- opción 'Todos' -->
+      <option *ngFor="let raza of razas" [ngValue]="raza.id_raza">{{raza.nombre}}</option>
     </select>
     <select *ngIf="razas.length <= 0" id="razaFilter">
       <option value="todos">Todos</option>
@@ -35,20 +37,23 @@
 
   <div class="filter-group">
     <label for="sexFilter">Sexo</label>
-    <select id="sexFilter">
-      <option value="todos">Todos</option>
-      <option value="Macho">Macho</option>
-      <option value="Hembra">Hembra</option>
+    <select id="sexFilter" [(ngModel)]="sexoSeleccionado">
+      <option value="">Todos</option>
+      <option value="M">Macho</option>
+      <option value="F">Hembra</option>
     </select>
   </div>
   <div class="filter-group">
     <label for="discFilter">Discapacidad</label>
-    <select id="discFilter">
-      <option value="todos">Todos</option>
-      <option value="Si">Sí</option>
-      <option value="No">No</option>
+    <select id="discFilter" [(ngModel)]="discapacidadSeleccionada">
+      <option [ngValue]="-1">Todos</option>
+      <option [ngValue]="1">Sí</option>
+      <option [ngValue]="0">No</option>
     </select>
   </div>
+
+  <button (click)="aplicarFiltro()">Aplicar Filtro</button>
+  <button (click)="listaMascotas()">Limpiar Filtros</button>
 </aside>
 
 <!-- Contenido principal -->
@@ -56,7 +61,7 @@
   <!-- Página 1 -->
   <section id="pagina1" class="active">
     <div class="pet-grid" *ngIf="mascotas.length > 0">
-      <div *ngFor=" let mascota of mascotas" class="card">
+      <div *ngFor=" let mascota of mascotasPaginadas" class="card">
         <img src="{{mascota.foto}}" alt="Toby"/>
         <div class="card-body">
           <h3>{{ mascota.nombre }}</h3>
@@ -64,205 +69,44 @@
           <button (click)="abrirModal(mascota)">Ver detalles</button>
         </div>
       </div>
+
+      <!--<nav class="pagination">
+        <button (click)="cambiarPagina(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+        <button *ngFor="let page of [].constructor(Math.ceil(mascotas.length / itemsPerPage)); let i = index"
+                [class.active]="currentPage === i + 1"
+                (click)="cambiarPagina(i + 1)">
+          {{ i + 1 }}
+        </button>
+        <button (click)="cambiarPagina(currentPage + 1)" [disabled]="currentPage === Math.ceil(mascotas.length / itemsPerPage)">Siguiente</button>
+      </nav>-->
     </div>
 
     <div class="pet-grid" *ngIf="mascotas.length < 1">
-      <!-- Tarjeta 1 -->
-      <div class="card" data-type="perro" data-breed="labrador" data-tamaño="Grande" data-peso="20kg" data-edad="4"
-           data-sex="Macho" data-disc="No">
-        <img src="assets/url1.jpg" alt="Toby"/>
-        <div class="card-body">
-          <h3>Toby</h3>
-          <p>Perro | Labrador | 20kg</p>
-          <p><small>Albergue: Refugio Feliz</small></p>
-          <button (click)="abrirModal(mascota)">Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 2 -->
-      <div class="card" data-type="perro" data-breed="golden" data-tamaño="Grande" data-peso="25kg" data-edad="2"
-           data-sex="Macho" data-disc="No">
-        <img src="assets/url3.jpg" alt="Max"/>
-        <div class="card-body">
-          <h3>Max</h3>
-          <p>Perro | Golden Retriever | 25kg</p>
-          <p><small>Albergue: Refugio Feliz</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 3 -->
-      <div class="card" data-type="gato" data-breed="siames" data-tamaño="Pequeño" data-peso="5kg" data-edad="4"
-           data-sex="Hembra" data-disc="No">
-        <img src="assets/url4.jpg" alt="Mila"/>
-        <div class="card-body">
-          <h3>Mila</h3>
-          <p>Gato | Siamés | 5kg</p>
-          <p><small>Albergue: Hogar Feliz</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 4 -->
-      <div class="card" data-type="perro" data-breed="husky" data-tamaño="Grande" data-peso="27kg" data-edad="5"
-           data-sex="Macho" data-disc="Si">
-        <img src="assets/url6.jpg" alt="Rocky"/>
-        <div class="card-body">
-          <h3>Rocky</h3>
-          <p>Perro | Husky | 27kg</p>
-          <p><small>Albergue: Hogar Canino</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 5 -->
-      <div class="card" data-type="gato" data-breed="siames" data-tamaño="Pequeño" data-peso="5kg" data-edad="2"
-           data-sex="Hembra" data-disc="No">
-        <img src="assets/url7.jpg" alt="Nala"/>
-        <div class="card-body">
-          <h3>Nala</h3>
-          <p>Gato | Siamés | Pequeño</p>
-          <p><small>Albergue: Hogar Feliz</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 6 -->
-      <div class="card" data-type="perro" data-breed="labrador" data-tamaño="Mediano" data-peso="20kg" data-edad="4"
-           data-sex="Macho" data-disc="No">
-        <img src="assets/url9.jpg" alt="Thor"/>
-        <div class="card-body">
-          <h3>Thor</h3>
-          <p>Perro | Labrador | Mediano</p>
-          <p><small>Albergue: Hogar Canino</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 7 -->
-      <div class="card" data-type="perro" data-breed="golden" data-tamaño="Mediano" data-peso="12kg" data-edad="5"
-           data-sex="Macho" data-disc="No">
-        <img src="assets/url10.jpg" alt="Milo"/>
-        <div class="card-body">
-          <h3>Milo</h3>
-          <p>Perro | Golden Retriever | Mediano</p>
-          <p><small>Albergue: Refugio Feliz</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 8 -->
-      <div class="card" data-type="gato" data-breed="siames" data-tamaño="Pequeño" data-peso="5kg"
-           data-edad="2" data-sex="Hembra" data-disc="No">
-        <img src="assets/url11.jpg" alt="Lola"/>
-        <div class="card-body">
-          <h3>Lola</h3>
-          <p>Gato | Siames | Pequeño</p>
-          <p><small>Albergue: Mundo Peludo</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 9 -->
-      <div class="card" data-type="perro" data-breed="bulldog" data-tamaño="Mediano" data-peso="6kg" data-edad="4"
-           data-sex="Macho" data-disc="No">
-        <img src="assets/url13.jpg" alt="Tommy"/>
-        <div class="card-body">
-          <h3>Tommy</h3>
-          <p>Perro | Bulldog | Mediano</p>
-          <p><small>Albergue: Amigos Peludos</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
+      <p>No se encontraron mascotas que coincidan con los filtros aplicados.</p>
+      <p>Por favor, ajusta los filtros y vuelve a intentarlo.</p>
     </div>
   </section>
 
-  <!-- Página 2 -->
-  <section id="pagina2">
-    <div class="pet-grid">
-      <!-- Tarjeta 1 -->
-      <div class="card" data-type="conejo" data-breed="angora" data-tamaño="Grande" data-peso="23kg" data-edad="2"
-           data-sex="Hembra" data-disc="No">
-        <img src="assets/url14.jpg" alt="Kira"/>
-        <div class="card-body">
-          <h3>Kira</h3>
-          <p>Conejo | Angora | Grande</p>
-          <p><small>Albergue: Hogar Canino</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 2 -->
-      <div class="card" data-type="pez" data-breed="betta" data-tamaño="Pequeño" data-peso="4kg" data-edad="2"
-           data-sex="Hembra" data-disc="No">
-        <img src="assets/url15.jpg" alt="Bella"/>
-        <div class="card-body">
-          <h3>Bella</h3>
-          <p>Pez | Betta | Pequeño</p>
-          <p><small>Albergue: Hogar Feliz</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 3 -->
-      <div class="card" data-type="gato" data-breed="persa" data-tamaño="Mediano" data-peso="8kg" data-edad="3"
-           data-sex="Hembra" data-disc="Si">
-        <img src="assets/url16.jpg" alt="Nina"/>
-        <div class="card-body">
-          <h3>Nina</h3>
-          <p>Gato | Persa | Mediano</p>
-          <p><small>Albergue: Hogar Feliz</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 4 -->
-      <div class="card" data-type="perro" data-breed="chusco" data-tamaño="Pequeño" data-peso="0.5kg" data-edad="1"
-           data-sex="Hembra" data-disc="No">
-        <img src="assets/url18.jpg" alt="Pepa"/>
-        <div class="card-body">
-          <h3>Pepa</h3>
-          <p>Perro | Chusco | Pequeño</p>
-          <p><small>Albergue: Mundo Peludo</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 5 -->
-      <div class="card" data-type="ave" data-breed="canario" data-tamaño="Pequeño" data-peso="0.6kg" data-edad="2"
-           data-sex="Hembra" data-disc="Si">
-        <img src="assets/url19.jpg" alt="Chispa"/>
-        <div class="card-body">
-          <h3>Chispa</h3>
-          <p>Ave | Canario | Pequeño</p>
-          <p><small>Albergue: Amigos Peludos</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-
-      <!-- Tarjeta 6 -->
-      <div class="card" data-type="perro" data-breed="bulldog" data-tamaño="Pequeño" data-peso="0.8kg" data-edad="4"
-           data-sex="Macho" data-disc="No">
-        <img src="assets/url20.jpg" alt="Daisy"/>
-        <div class="card-body">
-          <h3>Daisy</h3>
-          <p>Perro | Bulldog | Pequeño</p>
-          <p><small>Albergue: Mundo Peludo</small></p>
-          <button>Ver detalles</button>
-        </div>
-      </div>
-    </div>
-  </section>
 </div>
 
 <!-- Paginación -->
 <nav class="pagination">
+  <button (click)="cambiarPagina(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+  <button *ngFor="let page of [].constructor(Math.ceil(mascotas.length / itemsPerPage)); let i = index"
+          [class.active]="currentPage === i + 1"
+          (click)="cambiarPagina(i + 1)">
+    {{ i + 1 }}
+  </button>
+  <button (click)="cambiarPagina(currentPage + 1)" [disabled]="currentPage === Math.ceil(mascotas.length / itemsPerPage)">Siguiente</button>
+</nav>
+
+<!--<nav class="pagination">
   <button id="prevPage">Anterior</button>
   <button class="page-number active" data-page="pagina1">1</button>
   <button class="page-number" data-page="pagina2">2</button>
   <button class="page-number" data-page="pagina3">3</button>
   <button id="nextPage">Siguiente</button>
-</nav>
+</nav>-->
 
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel">
   <div class="modal-dialog modal-lg" role="document">
@@ -287,11 +131,11 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="tipo">Tipo</label>
-            <input id="tipo" [(ngModel)]="mascota.tipo_mascota.nombre" name="tipo" class="form-control" disabled>
+            <input id="tipo" [(ngModel)]="mascota.tipo_mascota" name="tipo" class="form-control" disabled>
           </div>
           <div class="form-group col-md-6">
             <label for="raza">Raza</label>
-            <input id="raza" [(ngModel)]="mascota.raza.nombre" name="raza" class="form-control" disabled>
+            <input id="raza" [(ngModel)]="mascota.raza" name="raza" class="form-control" disabled>
           </div>
         </div>
         <div class="form-row">
@@ -320,7 +164,7 @@
             <input id="adoptado" value="{{mascota.adoptado ? 'Ya adoptado': 'Todavía'}}" name="adoptado" class="form-control" disabled>
           </div>
           <div class="form-group col-md-6">
-            <label for="discapacidad">Fecha de Ingreso</label>
+            <label for="discapacidad">Discapacidad</label>
             <input id="discapacidad" value="{{mascota.discapacidad ? 'Con discapacidad': 'Sin discapacidad'}}" name="discapacidad" class="form-control" disabled>
           </div>
         </div>

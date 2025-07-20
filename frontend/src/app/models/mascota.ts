@@ -16,6 +16,7 @@ export class Mascota {
   discapacidad: boolean;
   tipo_mascota: TipoMascota;
   raza: Raza;
+  origen: string;
 
   constructor(
     id_mascota : number,
@@ -31,7 +32,8 @@ export class Mascota {
     adoptado: boolean,
     discapacidad: boolean,
     tipo_mascota: TipoMascota,
-    raza: Raza
+    raza: Raza,
+    origen: string
   ) {
     this.id_mascota = id_mascota;
     this.id_tipo_mascota = id_tipo_mascota;
@@ -47,5 +49,6 @@ export class Mascota {
     this.discapacidad = discapacidad;
     this.tipo_mascota = tipo_mascota;
     this.raza = raza;
+    this.origen = origen;
   }
 }
