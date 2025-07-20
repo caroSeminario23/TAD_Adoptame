@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify, make_response
 import requests
 
-federado_routes = Blueprint("federado_routes", __name__)
+
 
 
 ALBERGUES = {
@@ -9,6 +9,8 @@ ALBERGUES = {
     "albergue2": "http://127.0.0.1:8080",
     "albergue3": "http://127.0.0.1:3000"
 }
+
+federado_routes = Blueprint("federado_routes", __name__)
 @federado_routes.route("/listar_mascotas", methods=["GET"])
 def route_listar_mascotas():
     resultados = []
