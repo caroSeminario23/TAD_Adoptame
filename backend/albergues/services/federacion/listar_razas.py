@@ -15,9 +15,10 @@ def listar_razas():
         try:
             response = requests.get(f"{base_url}/raza_routes/get_razas", timeout=5)
             if response.status_code == 200:
-                resultados.append({"origen": nombre, "data": response.json()})
-        except Exception as e:
-            resultados.append({"origen": nombre, "error": str(e)})
+                json_data = response.json().get("data", [])
+                resultados.extend(json_data)
+        except Exception:
+            continue
 
     if not resultados:
         return make_response(jsonify({
