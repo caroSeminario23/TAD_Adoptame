@@ -8,7 +8,11 @@ const get_mascotas = (req, res) => {
         if (resultados.length === 0) {
             return res.status(404).json({ mensaje: 'No se encontraron mascotas' });
         }
-        res.status(200).json(resultados);
+        res.status(200).json({
+            message: 'Mascotas encontradas.',
+            status: 200,
+            data: resultados
+        });
     });
 };
 

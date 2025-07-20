@@ -8,7 +8,11 @@ const get_razas = (req, res) => {
         if (resultados.length === 0) {
             return res.status(404).json({ mensaje: 'No se encontraron razas' });
         }
-        res.status(200).json(resultados);
+        res.status(200).json({
+            message: 'Razas encontradas.',
+            status: 200,
+            data: resultados
+        });
     });
 };
 

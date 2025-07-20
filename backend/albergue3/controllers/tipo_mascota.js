@@ -8,7 +8,11 @@ const get_tipos_mascotas = (req, res) => {
         if (resultados.length === 0) {
             return res.status(404).json({ mensaje: 'No se encontraron tipos de mascota' });
         }
-        res.status(200).json(resultados);
+        res.status(200).json({
+            message: 'Tipos de mascotas encontrados.',
+            status: 200,
+            data: resultados
+        });
     });
 };
 

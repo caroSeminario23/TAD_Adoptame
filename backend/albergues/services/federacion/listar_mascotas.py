@@ -1,9 +1,6 @@
 from flask import Blueprint, request, jsonify, make_response
 import requests
 
-
-
-
 ALBERGUES = {
     "albergue1": "http://127.0.0.1:5000",
     "albergue2": "http://127.0.0.1:8080",
@@ -19,8 +16,12 @@ def route_listar_mascotas():
             response = requests.get(f"{base_url}/mascota_routes/get_mascotas", timeout=5)
             if response.status_code == 200:
                 json_data = response.json().get("data", [])
-                resultados.extend(json_data)
-        except Exception:
+                for item in json_data:
+                    item["origen"] = nombre
+                    resultados.append(item)
+                #resultados.extend(json_data)
+        except Exception as e:
+            print(f"Error al conectar con {nombre}: {e}")
             continue
 
     if not resultados:

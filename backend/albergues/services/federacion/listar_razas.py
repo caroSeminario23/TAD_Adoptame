@@ -16,8 +16,12 @@ def listar_razas():
             response = requests.get(f"{base_url}/raza_routes/get_razas", timeout=5)
             if response.status_code == 200:
                 json_data = response.json().get("data", [])
-                resultados.extend(json_data)
-        except Exception:
+                for item in json_data:
+                    item["origen"] = nombre
+                    resultados.append(item)
+                #resultados.extend(json_data)
+        except Exception as e:
+            print(f"Error al conectar con {nombre}: {e}")
             continue
 
     if not resultados:
