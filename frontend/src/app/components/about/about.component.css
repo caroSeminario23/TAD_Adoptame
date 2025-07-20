@@ -1,0 +1,104 @@
+:host {
+  display: block;
+  background-color: #e6f0fc;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1e1b4b;
+  padding: 2rem;
+}
+
+.values h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.intro p {
+  text-align: center;
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.mission {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.mission .founder {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.stats h2 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.stat-grid div {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 220px;            /* mismo ancho */
+  height: 160px;           /* mismo alto */
+  object-fit: cover;       /* recorta para encajar */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact button {
+  padding: 0.75rem;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
