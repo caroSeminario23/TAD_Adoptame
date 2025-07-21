@@ -3,6 +3,7 @@ import {Mascota} from '../../models/mascota';
 import {TipoMascota} from '../../models/tipo-mascota';
 import {Raza} from '../../models/raza';
 import {MascotaService} from '../../services/mascota/mascota.service';
+import { Caracteristica } from '../../models/caracteristica';
 
 declare var window: any;
 
@@ -136,6 +137,20 @@ export class MascotaComponent implements OnInit {
     this.mascotaService.buscarRaza(mascota).subscribe(res => {
       this.mascota.raza = res?.nombre;
       this.cdRef.detectChanges();
+    });
+
+    // Cargar características complementarias
+    this.mascota.caracteristicas = [];
+
+    this.mascotaService.listarCarComplementarias().subscribe(listaCaracteristicas => {
+      listaCaracteristicas.forEach((car: Caracteristica) => {
+        this.mascotaService.buscarCarMascota(mascota, car.id_caracteristica).subscribe(relacion => {
+          if (relacion && relacion.valor) {
+            this.mascota.caracteristicas.push({ nombre: car.nombre, valor: relacion.valor });
+            this.cdRef.detectChanges();
+          }
+        });
+      });
     });
 
     this.modal.show();

@@ -168,6 +168,19 @@
             <input id="discapacidad" value="{{mascota.discapacidad ? 'Con discapacidad': 'Sin discapacidad'}}" name="discapacidad" class="form-control" disabled>
           </div>
         </div>
+
+        <div class="form-row" *ngIf="mascota && mascota.caracteristicas && mascota.caracteristicas.length > 0">
+          <div class="form-group col-md-12">
+            <label>Características complementarias</label>
+            <ul class="list-group">
+              <li *ngFor="let car of mascota.caracteristicas" class="list-group-item d-flex justify-content-between align-items-center">
+                {{ car.nombre }}
+                <span class="badge bg-primary rounded-pill">{{ car.valor }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
 <!--        <button type="submit" class="btn btn-success">Guardar</button>-->
       </div>
     </div>
